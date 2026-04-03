@@ -1,0 +1,61 @@
+p2p-cpp/src/servers/signaling/src/main.cpp
+  e6862ac810ad8cfd 3-4,11,14,18,39,73,84-87,134,160,175-177,186,200-203,219-279,284-286
+  361c6f0a94005946 162-172
+p2p-cpp/src/crypto/ed25519_signer.cpp
+  361c6f0a94005946 6,11-24,62,67,71-72,75,81,93,98,105,111,119,132,137,144,150,156,168,173,183
+p2p-cpp/src/servers/relay/turn_message.cpp
+  6e5f831c4b2b82dc 31-33
+  361c6f0a94005946 13-14,58-62,68-71,73-75
+p2p-cpp/.env.example
+  e6862ac810ad8cfd 2-3,15
+p2p-cpp/src/protocol/stun.cpp
+  361c6f0a94005946 8-9,93-98,104-107,109-111
+p2p-cpp/.gitignore
+  6e5f831c4b2b82dc 13-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "977b856d163bce138cf46e16386d90fe59dbbd81",
+  "prompts": {
+    "361c6f0a94005946": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85a17d17-cf86-4348-9316-9412c2c5796d",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 1548,
+      "total_deletions": 195,
+      "accepted_lines": 1408,
+      "overriden_lines": 0
+    },
+    "6e5f831c4b2b82dc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9927335d-3677-4429-ab2e-dec31197d99c",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 1801,
+      "total_deletions": 1493,
+      "accepted_lines": 657,
+      "overriden_lines": 1
+    },
+    "e6862ac810ad8cfd": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "7fd3456e-8afc-4ab9-a9c9-2eaa9dcffd26",
+        "model": "default"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 5244,
+      "total_deletions": 1765,
+      "accepted_lines": 4864,
+      "overriden_lines": 0
+    }
+  }
+}
