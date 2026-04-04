@@ -1,0 +1,81 @@
+p2p-cpp/tests/performance/benchmark_tls.sh
+  361c6f0a94005946 1-113
+p2p-cpp/docs/TLS_QUICK_REFERENCE.md
+  361c6f0a94005946 1-101
+p2p-cpp/src/servers/signaling/src/main.cpp
+  361c6f0a94005946 5-7,13,19,22,39-40,45,53,60,67,74,78-84,107-109,111,114-115,139,147,165,174-175,181,186,192,196-204,206-227,232,235-242,244,248-249,252,328,334,341-346,351,354
+TLS_IMPLEMENTATION_COMPLETE.md
+  361c6f0a94005946 1-386
+p2p-cpp/tests/security/test_tls_context.cpp
+  361c6f0a94005946 1-49
+p2p-cpp/tests/integration/test_tls_e2e.sh
+  361c6f0a94005946 1-163
+p2p-cpp/src/security/tls_context.cpp
+  361c6f0a94005946 1-83
+p2p-cpp/docs/TLS_PHASE4_COMPLETION_REPORT.md
+  361c6f0a94005946 1-289
+p2p-cpp/include/p2p/security/tls_context.hpp
+  361c6f0a94005946 1-41
+p2p-cpp/src/security/CMakeLists.txt
+  361c6f0a94005946 1-4,6,9-16
+p2p-cpp/scripts/generate-dev-cert.sh
+  361c6f0a94005946 1-34
+p2p-cpp/docs/TLS_TESTING_SUMMARY.md
+  361c6f0a94005946 1-243
+p2p-cpp/docs/TLS_PHASE1_README.md
+  361c6f0a94005946 1-145
+p2p-cpp/docs/TLS_DEPLOYMENT_GUIDE.md
+  361c6f0a94005946 1-512
+p2p-cpp/config/peerlink.tls.example.toml
+  361c6f0a94005946 1-35
+p2p-cpp/docs/TLS_PHASE1_IMPLEMENTATION_REPORT.md
+  361c6f0a94005946 1-170
+p2p-cpp/tests/security/test_tls_integration.cpp
+  361c6f0a94005946 1-160
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "5aef92ee4747d342a3224cc7c899838b6bf4b134",
+  "prompts": {
+    "361c6f0a94005946": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85a17d17-cf86-4348-9316-9412c2c5796d",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 3492,
+      "overriden_lines": 0
+    },
+    "6e5f831c4b2b82dc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9927335d-3677-4429-ab2e-dec31197d99c",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 240,
+      "overriden_lines": 0
+    },
+    "e6862ac810ad8cfd": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "7fd3456e-8afc-4ab9-a9c9-2eaa9dcffd26",
+        "model": "default"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 736,
+      "overriden_lines": 0
+    }
+  }
+}
