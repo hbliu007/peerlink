@@ -1,0 +1,38 @@
+p2p-cpp/README.md
+  15ffc695e74c47cc 1-31,35,37,39,42-53,56-57,59-60,62,64-69,106-107,111,114-116,119,123-128,130,133,136-137,144,146,148-151,157-159,166,175,178,181,211,213-215,217,219,221,223-225
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "b47c63305c9fe8d4c7e20aaf8503f6bc07f76fb6",
+  "prompts": {
+    "15ffc695e74c47cc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "73a5b1d7-cfa5-4313-840b-f52fac70d732",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 98,
+      "total_deletions": 81,
+      "accepted_lines": 98,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/a276b635c68a313a9ae3aa6c667c9ec55a1e58ef3806e60828cecbcf3d8ca78c"
+    },
+    "51ae8f1a6553a1ca": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "198b4b35-e779-4e79-a94c-413e12e5814d",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 11,
+      "total_deletions": 9,
+      "accepted_lines": 10,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/bce8b91c40a1ec38469bca2f4a9dd562a3cb10b081b970441a0048404f685e5b"
+    }
+  }
+}
