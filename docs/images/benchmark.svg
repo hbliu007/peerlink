@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="700" height="300">
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  </style>
+
+  <defs>
+    <linearGradient id="bar-peerlink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="bar-frp" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#64748b"/>
+      <stop offset="100%" style="stop-color:#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="bar-tailscale" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#64748b"/>
+      <stop offset="100%" style="stop-color:#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="bar-zerotier" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#64748b"/>
+      <stop offset="100%" style="stop-color:#94a3b8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="300" fill="#0f172a" rx="12"/>
+
+  <!-- Title -->
+  <text x="350" y="35" text-anchor="middle" font-size="16" font-weight="700" fill="#e2e8f0">P2P Direct Connection Throughput</text>
+
+  <!-- Grid lines -->
+  <g stroke="#1e293b" stroke-width="1">
+    <line x1="180" y1="60" x2="180" y2="240"/>
+    <line x1="300" y1="60" x2="300" y2="240"/>
+    <line x1="420" y1="60" x2="420" y2="240"/>
+    <line x1="540" y1="60" x2="540" y2="240"/>
+    <line x1="660" y1="60" x2="660" y2="240"/>
+  </g>
+
+  <!-- Scale labels -->
+  <text x="180" y="255" text-anchor="middle" font-size="10" fill="#64748b">0</text>
+  <text x="300" y="255" text-anchor="middle" font-size="10" fill="#64748b">200</text>
+  <text x="420" y="255" text-anchor="middle" font-size="10" fill="#64748b">400</text>
+  <text x="540" y="255" text-anchor="middle" font-size="10" fill="#64748b">600</text>
+  <text x="660" y="255" text-anchor="middle" font-size="10" fill="#64748b">800</text>
+  <text x="420" y="275" text-anchor="middle" font-size="11" fill="#94a3b8">Mbps</text>
+
+  <!-- PeerLink bar -->
+  <text x="170" y="90" text-anchor="end" font-size="13" font-weight="700" fill="#60a5fa">PeerLink</text>
+  <rect x="180" y="75" width="480" height="24" rx="4" fill="url(#bar-peerlink)" opacity="0.9"/>
+  <text x="665" y="92" font-size="13" font-weight="800" fill="#60a5fa">500+</text>
+
+  <!-- FRP bar -->
+  <text x="170" y="130" text-anchor="end" font-size="13" fill="#94a3b8">FRP</text>
+  <rect x="180" y="115" width="12" height="24" rx="4" fill="url(#bar-frp)" opacity="0.6"/>
+  <text x="200" y="132" font-size="12" fill="#64748b">N/A (relay only)</text>
+
+  <!-- Tailscale bar -->
+  <text x="170" y="170" text-anchor="end" font-size="13" fill="#94a3b8">Tailscale</text>
+  <rect x="180" y="155" width="432" height="24" rx="4" fill="url(#bar-tailscale)" opacity="0.6"/>
+  <text x="617" y="172" font-size="12" fill="#94a3b8">~450</text>
+
+  <!-- ZeroTier bar -->
+  <text x="170" y="210" text-anchor="end" font-size="13" fill="#94a3b8">ZeroTier</text>
+  <rect x="180" y="195" width="384" height="24" rx="4" fill="url(#bar-zerotier)" opacity="0.6"/>
+  <text x="569" y="212" font-size="12" fill="#94a3b8">~400</text>
+</svg>

@@ -1,0 +1,19 @@
+[Unit]
+Description=PeerLink Simple TCP Relay (REGISTER/CONNECT for relay-tunnel)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=peerlink
+Group=peerlink
+WorkingDirectory=/var/lib/peerlink
+# Bind loopback only; expose publicly via nginx stream (see deploy/nginx/peerlink-stream.conf).
+ExecStart=/opt/peerlink/bin/simple-relay-server --host 127.0.0.1 --port 9700
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target

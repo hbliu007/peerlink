@@ -1,0 +1,35 @@
+# PeerLink TLS Configuration Example
+
+[signaling]
+host = "0.0.0.0"
+port = 8443  # WSS 端口（TLS 启用时）
+# port = 8080  # WS 端口（TLS 禁用时）
+heartbeat_interval = 30
+connection_timeout = 90
+
+[signaling.tls]
+enabled = true
+cert_path = "certs/server.crt"
+key_path = "certs/server.key"
+# ca_path = "certs/ca.crt"  # 可选，用于客户端证书验证
+cipher_suites = "TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256"
+require_client_cert = false
+handshake_timeout_ms = 10000
+
+[signaling.rate_limit]
+requests_per_second = 20
+burst_size = 50
+ban_threshold = 5
+ban_duration_seconds = 300
+
+[did]
+host = "0.0.0.0"
+port = 8444  # HTTPS 端口
+
+[did.tls]
+enabled = true
+cert_path = "certs/server.crt"
+key_path = "certs/server.key"
+cipher_suites = "TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256"
+require_client_cert = false
+handshake_timeout_ms = 10000

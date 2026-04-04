@@ -1,0 +1,98 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-release:
+    name: Build and Release
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        include:
+          - os: ubuntu-latest
+            artifact_name: p2p-sdk-linux
+            binary_name: libp2p.so
+          - os: macos-latest
+            artifact_name: p2p-sdk-macos
+            binary_name: libp2p.dylib
+          - os: windows-latest
+            artifact_name: p2p-sdk-windows
+            binary_name: p2p.dll
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies (Ubuntu)
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            cmake \
+            libboost-all-dev \
+            libssl-dev \
+            libprotobuf-dev \
+            protobuf-compiler \
+            nlohmann-json3-dev
+
+      - name: Install dependencies (macOS)
+        if: matrix.os == 'macos-latest'
+        run: |
+          brew install boost openssl protobuf cmake nlohmann-json
+
+      - name: Install dependencies (Windows)
+        if: matrix.os == 'windows-latest'
+        run: |
+          vcpkg install boost-asio boost-system boost-filesystem boost-thread openssl protobuf nlohmann-json
+
+      - name: Configure CMake (Ubuntu/macOS)
+        if: runner.os != 'Windows'
+        run: |
+          cmake -B build \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DBUILD_TESTING=OFF
+
+      - name: Configure CMake (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          cmake -B build `
+            -DCMAKE_BUILD_TYPE=Release `
+            -DBUILD_TESTING=OFF `
+            -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake
+
+      - name: Build
+        run: cmake --build build --config Release -j$(nproc)
+
+      - name: Create package
+        shell: bash
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          mkdir -p package
+
+          # Copy libraries
+          cp -r build/src/*/libp2p* package/ 2>/dev/null || true
+          cp -r/build/src/*/libp2p* package/ 2>/dev/null || true
+
+          # Copy headers
+          cp -r include package/
+
+          # Create package archive
+          tar -czf p2p-sdk-${{ matrix.artifact_name }}-${VERSION}.tar.gz package/
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: p2p-sdk-${{ matrix.artifact_name }}-*.tar.gz
+
+      - name: Upload to release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: p2p-sdk-${{ matrix.artifact_name }}-*.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

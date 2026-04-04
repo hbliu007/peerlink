@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420">
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .layer-label { font-size: 13px; font-weight: 700; fill: #e2e8f0; }
+    .layer-sub { font-size: 11px; fill: #94a3b8; }
+    .layer-num { font-size: 18px; font-weight: 800; }
+  </style>
+
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.05"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.05"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.05"/>
+    </linearGradient>
+    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0.05"/>
+    </linearGradient>
+    <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:0.05"/>
+    </linearGradient>
+    <linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="420" fill="#0f172a" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-size="16" font-weight="700" fill="#e2e8f0">Six-Layer Modular Architecture</text>
+
+  <!-- Layer 6: Platform -->
+  <rect x="60" y="55" width="680" height="50" rx="8" fill="url(#g6)" stroke="#ec4899" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="80" y="76" class="layer-num" fill="#ec4899">6</text>
+  <text x="105" y="76" class="layer-label">Platform</text>
+  <text x="105" y="92" class="layer-sub">CLI · Daemon · Library/SDK · Python Bindings</text>
+
+  <!-- Layer 5: Security -->
+  <rect x="60" y="115" width="680" height="50" rx="8" fill="url(#g5)" stroke="#ef4444" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="80" y="136" class="layer-num" fill="#ef4444">5</text>
+  <text x="105" y="136" class="layer-label">Security</text>
+  <text x="105" y="152" class="layer-sub">DID Identity · Ed25519 Signing · TLS 1.3 · Signed Envelope</text>
+
+  <!-- Layer 4: NAT -->
+  <rect x="60" y="175" width="680" height="50" rx="8" fill="url(#g4)" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="80" y="196" class="layer-num" fill="#f59e0b">4</text>
+  <text x="105" y="196" class="layer-label">NAT Traversal</text>
+  <text x="105" y="212" class="layer-sub">STUN Detection · UDP Hole Punching · TCP Simultaneous Open · Relay Fallback</text>
+
+  <!-- Layer 3: Transport -->
+  <rect x="60" y="235" width="680" height="50" rx="8" fill="url(#g3)" stroke="#8b5cf6" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="80" y="256" class="layer-num" fill="#8b5cf6">3</text>
+  <text x="105" y="256" class="layer-label">Transport</text>
+  <text x="105" y="272" class="layer-sub">UDP Socket · TCP Socket · TLS Transport · Relay Protocol</text>
+
+  <!-- Layer 2: Protocol -->
+  <rect x="60" y="295" width="680" height="50" rx="8" fill="url(#g2)" stroke="#10b981" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="80" y="316" class="layer-num" fill="#10b981">2</text>
+  <text x="105" y="316" class="layer-label">Protocol</text>
+  <text x="105" y="332" class="layer-sub">Signaling Protocol · P2P Protocol · Relay Protocol · Protobuf Messages</text>
+
+  <!-- Layer 1: Core -->
+  <rect x="60" y="355" width="680" height="50" rx="8" fill="url(#g1)" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="80" y="376" class="layer-num" fill="#3b82f6">1</text>
+  <text x="105" y="376" class="layer-label">Core</text>
+  <text x="105" y="392" class="layer-sub">Event Loop · Memory Pool · Thread Pool · Logger (spdlog)</text>
+</svg>

@@ -1,0 +1,19 @@
+[Unit]
+Description=PeerLink Network Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=peerlink
+Group=peerlink
+Environment=PEERLINK_CONFIG=/etc/peerlink/peerlink.toml
+WorkingDirectory=/var/lib/peerlink
+ExecStart=/opt/peerlink/bin/peerlink-network
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target

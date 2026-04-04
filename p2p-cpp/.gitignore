@@ -1,0 +1,97 @@
+# Build directories
+build/
+build_new/
+build-*/
+cmake-build-*/
+
+# Archives
+*.tar.gz
+*.tar.bz2
+*.zip
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment files (keep .env.example, ignore .env)
+.env
+.env.local
+.env.*.local
+
+# Compiled files
+*.o
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+*.exe
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+!cmake/*.cmake
+
+# Testing
+Testing/
+CTestTestfile.cmake
+
+# Coverage
+*.gcda
+*.gcno
+*.gcov
+coverage/
+htmlcov/
+
+# Sanitizers
+*.asan
+*.tsan
+*.msan
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Documentation
+docs/html/
+docs/latex/
+Doxyfile.bak
+
+# MkDocs build output & documentation artifacts
+site/
+docx/
+docs-archive/
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Third-party (if not using submodules)
+third_party/*/
+!third_party/CMakeLists.txt
+!third_party/README.md
+
+# TLS certificates (不提交到 Git)
+certs/
+*.crt
+*.key
+*.pem
+*.csrrelay-tunnel-single-fixed

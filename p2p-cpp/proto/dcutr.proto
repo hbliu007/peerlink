@@ -1,0 +1,42 @@
+// DCUtR (Direct Connection Upgrade through Relay) Protocol Messages
+// Based on libp2p spec: https://github.com/libp2p/specs/blob/master/relay/DCUtR.md
+
+syntax = "proto3";
+
+package p2p.protocol.dcutr;
+
+// DCUtR message wrapper
+message DCUtRMessage {
+  enum Type {
+    CONNECT = 0;
+    SYNC = 1;
+  }
+
+  Type type = 1;
+
+  oneof payload {
+    Connect connect = 2;
+    Sync sync = 3;
+  }
+}
+
+// CONNECT message (Initiator → Responder, via relay)
+message Connect {
+  // Observed addresses (public addresses)
+  repeated bytes addrs = 1;  // Multiaddr format
+
+  // Local timestamp for RTT calculation (nanoseconds)
+  int64 timestamp_ns = 2;
+}
+
+// SYNC message (Responder → Initiator, via relay)
+message Sync {
+  // Observed addresses
+  repeated bytes addrs = 1;
+
+  // Echo initiator's timestamp
+  int64 echo_timestamp_ns = 2;
+
+  // Responder's timestamp (nanoseconds)
+  int64 timestamp_ns = 3;
+}

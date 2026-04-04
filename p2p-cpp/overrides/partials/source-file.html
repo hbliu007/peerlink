@@ -1,0 +1,13 @@
+{#-
+  Custom source file link that points to the GitHub repository
+-#}
+
+{% import "partials/language.html" as lang with context %}
+
+<a href="{{ config.repo_url }}" title="{{ lang.t('repo.link') }}" class="md-source-file" rel="noopener">
+  <div class="md-source-file__fact">
+    <div class="md-source-file__icon">
+      {% include ".icons/fontawesome/brands/github.svg" %}
+    </div>
+  </div>
+</a>

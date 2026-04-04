@@ -1,0 +1,28 @@
+{% import "partials/language.html" as lang with context %}
+
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        <div class="md-footer-copyright__highlight">
+          Copyright &copy; 2025-2026 P2P Platform Team. Released under MIT License.
+        </div>
+        {% if config.copyright %}
+          <div class="md-footer-copyright__custom">
+            {{ config.copyright }}
+          </div>
+        {% endif %}
+      </div>
+      <div class="md-footer-social">
+        {% if config.extra.social %}
+          {% for social in config.extra.social %}
+            <a href="{{ social.link }}" class="md-footer-social__link" target="_blank" rel="noopener">
+              {% set icon = social.icon | default("fontawesome/solid/link") %}
+              {% include ".icons/" ~ icon ~ ".svg" %}
+            </a>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</footer>

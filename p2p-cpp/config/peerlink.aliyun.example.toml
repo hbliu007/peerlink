@@ -1,0 +1,55 @@
+[signaling]
+host = "127.0.0.1"
+port = 18080
+heartbeat_interval = 30
+connection_timeout = 90
+allow_insecure_registration = false
+
+[did]
+host = "127.0.0.1"
+port = 18081
+max_connections = 1000
+
+[redis]
+host = "127.0.0.1"
+port = 6379
+
+[auth]
+jwt_secret = "replace-with-a-real-secret"
+
+[stun]
+host = "0.0.0.0"
+udp_port = 3478
+tcp_port = 3479
+
+[turn]
+host = "0.0.0.0"
+port = 9001
+public_ip = "<YOUR_PUBLIC_IP>"
+min_port = 50000
+max_port = 50100
+lifetime = 600
+max_allocations = 1000
+
+[network]
+metrics_interval_seconds = 30
+
+[gateway.admin]
+enabled = true
+host = "127.0.0.1"
+port = 9300
+
+[network.admin]
+enabled = true
+host = "127.0.0.1"
+port = 9301
+
+[signaling.admin]
+enabled = true
+host = "127.0.0.1"
+port = 9302
+
+[did.admin]
+enabled = true
+host = "127.0.0.1"
+port = 9303

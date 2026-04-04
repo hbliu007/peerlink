@@ -1,0 +1,449 @@
+/* ============================================================
+   PeerLink Documentation — Custom Styles
+   Inspired by Traefik (persona cards) + Tailscale (visual hierarchy)
+   ============================================================ */
+
+:root {
+  --peer-primary: #2196F3;
+  --peer-accent: #00BFA5;
+  --peer-dark: #1565C0;
+  --peer-light: #E3F2FD;
+  --peer-success: #4CAF50;
+  --peer-warning: #FF9800;
+  --peer-danger: #F44336;
+  --peer-gradient: linear-gradient(135deg, #2196F3 0%, #00BFA5 100%);
+  --peer-radius: 0.75rem;
+  --peer-shadow: 0 2px 12px rgba(33, 150, 243, 0.12);
+  --peer-shadow-hover: 0 8px 30px rgba(33, 150, 243, 0.2);
+}
+
+/* ----------------------------------------------------------
+   Persona Cards (inspired by Traefik)
+   ---------------------------------------------------------- */
+.persona-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.persona-card {
+  background: var(--md-default-bg-color);
+  border-radius: var(--peer-radius);
+  padding: 1.75rem 1.5rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.persona-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: var(--peer-radius) var(--peer-radius) 0 0;
+}
+
+.persona-card[data-persona="developer"]::before {
+  background: linear-gradient(90deg, #2196F3, #42A5F5);
+}
+
+.persona-card[data-persona="ops"]::before {
+  background: linear-gradient(90deg, #FF9800, #FFB74D);
+}
+
+.persona-card[data-persona="evaluator"]::before {
+  background: linear-gradient(90deg, #9C27B0, #BA68C8);
+}
+
+.persona-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--peer-shadow-hover);
+  border-color: transparent;
+}
+
+.persona-card h3 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 1.15rem;
+}
+
+.persona-card p {
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 1rem !important;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.persona-card .persona-icon {
+  font-size: 2rem;
+  color: var(--peer-primary);
+}
+
+.persona-card .persona-cta {
+  display: inline-block;
+  background: var(--peer-gradient);
+  color: white !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  margin-bottom: 0.75rem;
+}
+
+.persona-card .persona-cta:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.persona-card .persona-link {
+  display: block;
+  color: var(--peer-primary) !important;
+  font-size: 0.85rem;
+  padding: 0.2rem 0;
+  text-decoration: none !important;
+}
+
+.persona-card .persona-link:hover {
+  text-decoration: underline !important;
+}
+
+/* ----------------------------------------------------------
+   Hero Section
+   ---------------------------------------------------------- */
+.md-typeset h1 + p {
+  font-size: 1.25rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.6;
+  max-width: 680px;
+}
+
+/* ----------------------------------------------------------
+   Feature Cards (grid enhancement)
+   ---------------------------------------------------------- */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > ol > li {
+  border-radius: var(--peer-radius);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  transition: all 0.25s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid.cards > ol > li:hover {
+  box-shadow: var(--peer-shadow-hover);
+  transform: translateY(-2px);
+  border-color: transparent;
+}
+
+/* ----------------------------------------------------------
+   Admonition Customization (inspired by IPFS)
+   ---------------------------------------------------------- */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: var(--peer-radius);
+  border: none;
+  box-shadow: var(--peer-shadow);
+}
+
+.md-typeset .admonition.tip {
+  border-left: 4px solid var(--peer-success);
+}
+
+.md-typeset .admonition.warning {
+  border-left: 4px solid var(--peer-warning);
+}
+
+.md-typeset .admonition.danger {
+  border-left: 4px solid var(--peer-danger);
+}
+
+.md-typeset .admonition.info {
+  border-left: 4px solid var(--peer-primary);
+}
+
+.md-typeset .admonition.note {
+  border-left: 4px solid var(--md-primary-fg-color);
+}
+
+/* ----------------------------------------------------------
+   Code Blocks Enhancement
+   ---------------------------------------------------------- */
+.md-typeset code {
+  border-radius: 4px;
+}
+
+.md-typeset .highlight {
+  border-radius: var(--peer-radius);
+  overflow: hidden;
+}
+
+.md-typeset .highlight .md-clipboard {
+  transition: all 0.2s ease;
+}
+
+.md-typeset .highlight .md-clipboard:hover {
+  color: var(--peer-primary);
+}
+
+/* Code block filename label */
+.md-typeset .highlight span.filename {
+  background: var(--md-primary-fg-color);
+  color: white;
+  padding: 0.2rem 0.75rem;
+  border-radius: 4px 4px 0 0;
+  font-size: 0.75rem;
+  font-family: var(--md-code-font);
+  margin-bottom: -0.2rem;
+  display: inline-block;
+}
+
+/* ----------------------------------------------------------
+   Tables Enhancement
+   ---------------------------------------------------------- */
+.md-typeset table:not([class]) {
+  border-radius: var(--peer-radius);
+  overflow: hidden;
+  box-shadow: var(--peer-shadow);
+  border-collapse: separate;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--peer-gradient);
+  color: white;
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) td {
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background: var(--peer-light);
+}
+
+/* ----------------------------------------------------------
+   Mermaid Diagram Enhancement
+   ---------------------------------------------------------- */
+.mermaid {
+  text-align: center;
+  margin: 1.5rem auto;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ----------------------------------------------------------
+   Buttons
+   ---------------------------------------------------------- */
+.md-typeset .md-button {
+  border-radius: 2rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.md-typeset .md-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.md-typeset .md-button--primary {
+  background: var(--peer-gradient) !important;
+  border-color: transparent !important;
+}
+
+/* ----------------------------------------------------------
+   Architecture Layers (for concepts pages)
+   ---------------------------------------------------------- */
+.architecture-layer {
+  background: var(--md-default-bg-color);
+  border-left: 4px solid var(--peer-primary);
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.75rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+}
+
+.architecture-layer:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.15);
+}
+
+.architecture-layer.security { border-left-color: var(--peer-success); }
+.architecture-layer.nat { border-left-color: var(--peer-warning); }
+.architecture-layer.transport { border-left-color: #9C27B0; }
+.architecture-layer.protocol { border-left-color: var(--peer-danger); }
+.architecture-layer.core { border-left-color: #607D8B; }
+
+.architecture-layer h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--peer-dark);
+}
+
+.architecture-layer .tag {
+  display: inline-block;
+  background: var(--peer-light);
+  color: var(--peer-dark);
+  padding: 0.15rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+/* ----------------------------------------------------------
+   Protocol Step Diagram
+   ---------------------------------------------------------- */
+.protocol-step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.protocol-step .icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  background: var(--peer-gradient);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.protocol-step .content {
+  flex: 1;
+  background: var(--md-default-bg-color);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* ----------------------------------------------------------
+   Performance Metrics
+   ---------------------------------------------------------- */
+.metric-highlight {
+  text-align: center;
+  padding: 1rem;
+}
+
+.metric-highlight .value {
+  font-size: 2rem;
+  font-weight: 700;
+  background: var(--peer-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.metric-highlight .label {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.25rem;
+}
+
+/* ----------------------------------------------------------
+   Dark Mode Adjustments
+   ---------------------------------------------------------- */
+[data-md-color-scheme="slate"] {
+  --peer-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  --peer-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+[data-md-color-scheme="slate"] .persona-card {
+  background: var(--md-default-bg-color);
+  border-color: var(--md-default-fg-color--lightest);
+}
+
+[data-md-color-scheme="slate"] .persona-card .persona-cta {
+  background: var(--peer-gradient);
+  color: white !important;
+}
+
+[data-md-color-scheme="slate"] .architecture-layer {
+  border-color: var(--md-default-fg-color--lightest);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td {
+  border-bottom-color: var(--md-default-fg-color--lightest);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tr:hover td {
+  background: rgba(33, 150, 243, 0.1);
+}
+
+/* ----------------------------------------------------------
+   Responsive
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+  .persona-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .persona-card {
+    padding: 1.25rem;
+  }
+
+  .md-typeset table:not([class]) {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .protocol-step {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .protocol-step .icon {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* ----------------------------------------------------------
+   Custom Scrollbar
+   ---------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--peer-primary);
+  border-radius: 3px;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--peer-dark);
+}
+
+/* ----------------------------------------------------------
+   Print Styles
+   ---------------------------------------------------------- */
+@media print {
+  .persona-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .md-typeset .grid.cards > ul > li:hover,
+  .persona-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

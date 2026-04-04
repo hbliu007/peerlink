@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  <meta property="og:title" content="{{ config.site_name | e }}" />
+  <meta property="og:description" content="{{ config.site_description | e }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ page.canonical_url | e }}" />
+  <meta property="og:image" content="{{ config.site_url | e }}/assets/images/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@peerlink" />
+  {# 使用系统字体替代 Google Fonts，国内秒开 #}
+  <style>
+    :root {
+      --md-text-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+      --md-code-font: "SF Mono", "Fira Code", "JetBrains Mono", Menlo, Consolas, monospace;
+    }
+  </style>
+{% endblock %}
+
+{% block fonts %}{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="https://registry.npmmirror.com/mermaid/10.9.3/files/dist/mermaid.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: document.body.getAttribute("data-md-color-scheme") === "slate" ? "dark" : "default",
+        securityLevel: "loose"
+      });
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,239 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+
+env:
+  PYTHON_VERSION: "3.11"
+
+jobs:
+  # 代码质量检查
+  lint:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install black isort mypy pylint flake8
+
+      - name: Black format check
+        run: black --check --diff .
+
+      - name: isort check
+        run: isort --check-only --diff .
+
+      - name: Flake8 lint
+        run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+      - name: Mypy type check
+        run: mypy . || true
+
+  # 单元测试
+  test-unit:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Run unit tests
+        run: |
+          pytest tests/unit/ \
+            -v \
+            --cov=. \
+            --cov-report=xml \
+            --cov-report=term-missing:skip-covered \
+            --timeout=300
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./coverage.xml
+          flags: unit
+          fail_ci_if_error: false
+
+  # 集成测试
+  test-integration:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Run integration tests
+        run: |
+          pytest tests/integration/ \
+            -v \
+            --cov=. \
+            --cov-report=xml \
+            --cov-append \
+            --timeout=600
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./coverage.xml
+          flags: integration
+          fail_ci_if_error: false
+
+  # NAT穿透测试
+  test-nat:
+    name: NAT Penetration Tests
+    runs-on: ubuntu-latest
+    needs: test-integration
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Run NAT tests
+        run: |
+          pytest tests/integration/test_nat_penetration.py \
+            -v \
+            -m nat \
+            --timeout=300
+
+  # 压力测试
+  test-stress:
+    name: Stress Tests
+    runs-on: ubuntu-latest
+    needs: test-integration
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Run stress tests
+        run: |
+          pytest tests/stress/ \
+            -v \
+            -m stress \
+            --timeout=900
+
+  # 安全扫描
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install bandit safety
+
+      - name: Run Bandit security linter
+        run: bandit -r . -f json -o bandit-report.json || true
+
+      - name: Run Safety check
+        run: safety check --json || true
+
+      - name: Upload security reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-reports
+          path: |
+            bandit-report.json
+
+  # 构建测试
+  build:
+    name: Build Test
+    runs-on: ubuntu-latest
+    needs: [test-unit, test-integration]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install build dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install build wheel
+
+      - name: Build package
+        run: python -m build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  # 汇总测试结果
+  test-summary:
+    name: Test Summary
+    runs-on: ubuntu-latest
+    needs: [test-unit, test-integration, test-nat, test-stress]
+    if: always()
+    steps:
+      - name: Check test results
+        run: |
+          echo "Unit tests: ${{ needs.test-unit.result }}"
+          echo "Integration tests: ${{ needs.test-integration.result }}"
+          echo "NAT tests: ${{ needs.test-nat.result }}"
+          echo "Stress tests: ${{ needs.test-stress.result }}"
+
+          if [[ "${{ needs.test-unit.result }}" == "failure" ]]; then
+            echo "::error::Unit tests failed"
+            exit 1
+          fi

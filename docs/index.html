@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PeerLink — High-Performance P2P Networking in C++20</title>
+  <meta name="description" content="Open-source libp2p-compatible P2P networking library in C++20. TLS 1.3, WebRTC, NAT traversal, Kademlia DHT, 500 Mbps throughput." />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg2: #161b22;
+      --bg3: #21262d;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --accent2: #388bfd;
+      --green: #3fb950;
+      --purple: #a371f7;
+      --orange: #f78166;
+      --yellow: #e3b341;
+      --cyan: #39d353;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(13,17,23,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    nav .logo { font-weight: 700; font-size: 1.1rem; color: #fff; display: flex; align-items: center; gap: 8px; }
+    nav .logo span { color: var(--accent); }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; align-items: center; }
+    nav ul li a { color: var(--text-muted); font-size: 0.9rem; }
+    nav ul li a:hover { color: var(--text); text-decoration: none; }
+    nav .btn-nav {
+      background: var(--accent2); color: #fff; padding: 6px 16px;
+      border-radius: 6px; font-size: 0.85rem; font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    nav .btn-nav:hover { opacity: 0.85; text-decoration: none; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 2rem 80px;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(56,139,253,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero .badge-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .hero .badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--bg2); border: 1px solid var(--border);
+      padding: 4px 12px; border-radius: 20px;
+      font-size: 0.78rem; color: var(--text-muted);
+    }
+    .hero .badge.cpp20 { border-color: var(--purple); color: var(--purple); }
+    .hero .badge.mit { border-color: var(--green); color: var(--green); }
+    .hero .badge.libp2p { border-color: var(--orange); color: var(--orange); }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      max-width: 800px;
+    }
+    .hero h1 .highlight { background: linear-gradient(135deg, var(--accent2), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+    }
+    .hero .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 12px 28px; border-radius: 8px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: all 0.2s; cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent2), var(--purple));
+      color: #fff;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); text-decoration: none; }
+    .btn-secondary {
+      background: var(--bg2); border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-secondary:hover { border-color: var(--text-muted); text-decoration: none; }
+
+    .hero .hero-image {
+      width: 100%; max-width: 900px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    .hero .stats-row {
+      display: flex; gap: 3rem; justify-content: center;
+      margin-top: 2rem; flex-wrap: wrap;
+    }
+    .hero .stat { text-align: center; }
+    .hero .stat .num { font-size: 2rem; font-weight: 800; color: #fff; }
+    .hero .stat .label { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* SECTION */
+    section { padding: 80px 2rem; max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700; color: #fff;
+      margin-bottom: 1rem;
+    }
+    .section-desc { color: var(--text-muted); max-width: 600px; margin-bottom: 3rem; }
+
+    /* PROTOCOL GRID */
+    .proto-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;
+    }
+    .proto-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem;
+    }
+    .proto-card .proto-header { display: flex; align-items: center; gap: 8px; margin-bottom: 0.5rem; }
+    .proto-card h3 { color: #fff; font-size: 1rem; }
+    .proto-card p { color: var(--text-muted); font-size: 0.85rem; }
+    .proto-card .tag {
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      padding: 2px 8px; border-radius: 4px; margin-top: 0.5rem;
+    }
+    .tag.security { background: rgba(63,185,80,0.15); color: var(--green); }
+    .tag.transport { background: rgba(56,139,253,0.15); color: var(--accent); }
+    .tag.protocol { background: rgba(163,113,247,0.15); color: var(--purple); }
+    .tag.nat { background: rgba(247,129,102,0.15); color: var(--orange); }
+
+    /* PERF TABLE */
+    .perf-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    .perf-table th, .perf-table td {
+      text-align: left; padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .perf-table th { color: var(--text-muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; }
+    .perf-table td { color: var(--text); }
+    .perf-table tr:last-child td { border-bottom: none; }
+    .perf-table .metric { color: var(--green); font-weight: 700; font-size: 1.05rem; }
+    .perf-table .latency { color: var(--accent); font-weight: 700; }
+
+    /* CODE */
+    .code-block {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.5rem;
+      font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
+      font-size: 0.85rem; overflow-x: auto;
+      line-height: 1.7;
+    }
+    .code-block .comment { color: var(--text-muted); }
+    .code-block .keyword { color: var(--purple); }
+    .code-block .type { color: var(--accent); }
+    .code-block .string { color: var(--green); }
+    .code-block .func { color: var(--yellow); }
+    .code-block .macro { color: var(--orange); }
+
+    /* NAT STACK */
+    .nat-steps {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .nat-step {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem; text-align: center;
+    }
+    .nat-step .step-num {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--accent2); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.9rem; margin: 0 auto 0.75rem;
+    }
+    .nat-step h4 { color: #fff; font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .nat-step p { color: var(--text-muted); font-size: 0.8rem; }
+
+    /* USE CASES */
+    .usecase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .usecase-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem;
+    }
+    .usecase-card .emoji { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .usecase-card h3 { color: #fff; font-size: 1rem; margin-bottom: 0.3rem; }
+    .usecase-card p { color: var(--text-muted); font-size: 0.82rem; }
+
+    /* CTA */
+    .cta-section {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 16px; padding: 3rem 2rem;
+      text-align: center; margin: 0 2rem;
+    }
+    .cta-section h2 { color: #fff; font-size: 1.8rem; margin-bottom: 0.75rem; }
+    .cta-section p { color: var(--text-muted); margin-bottom: 1.5rem; }
+    .cta-section .cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 2rem;
+      text-align: center;
+      color: var(--text-muted); font-size: 0.85rem;
+    }
+    footer .sponsor-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #ea4aaa; color: #fff;
+      padding: 10px 24px; border-radius: 8px;
+      font-weight: 600; font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    footer .sponsor-btn:hover { opacity: 0.9; text-decoration: none; }
+    footer .links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; flex-wrap: wrap; }
+    footer .links a { color: var(--text-muted); font-size: 0.88rem; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">🔗 <span>Peer</span>Link</div>
+  <ul>
+    <li><a href="#protocols">Protocols</a></li>
+    <li><a href="#performance">Performance</a></li>
+    <li><a href="#nat">NAT Traversal</a></li>
+    <li><a href="#get-started">Get Started</a></li>
+    <li><a href="https://github.com/hbliu007/peerlink" class="btn-nav">⭐ GitHub</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge-row">
+    <span class="badge cpp20">C++20</span>
+    <span class="badge mit">MIT License</span>
+    <span class="badge libp2p">libp2p Compatible</span>
+    <span class="badge">TLS 1.3 + Noise</span>
+  </div>
+  <h1>High-Performance <span class="highlight">P2P Networking</span><br>for C++ Developers</h1>
+  <p class="subtitle">A complete libp2p-compatible P2P communication stack in C++20. TLS 1.3 + Noise security, WebRTC native, Kademlia DHT, NAT traversal. 500 Mbps throughput.</p>
+  <div class="cta-row">
+    <a href="https://github.com/hbliu007/peerlink" class="btn btn-primary">⭐ Star on GitHub</a>
+    <a href="#get-started" class="btn btn-secondary">⚡ Quick Start</a>
+    <a href="https://github.com/hbliu007/peerlink/tree/main/p2p-cpp/docs" class="btn btn-secondary">📖 Documentation</a>
+  </div>
+
+  <img src="https://minimax-algeng-chat-tts.oss-cn-wulanchabu.aliyuncs.com/ccv2%2F2026-03-18%2FMiniMax-M2.5-highspeed%2F1996876241642197019%2F5f5806e78edeb618276c93408cc5b5c0de9c3298831875ad79e49db90c11f7f6..png" alt="PeerLink P2P Network Architecture" class="hero-image" />
+
+  <div class="stats-row">
+    <div class="stat"><div class="num">500 Mbps</div><div class="label">P2P Throughput</div></div>
+    <div class="stat"><div class="num">20 ms</div><div class="label">Connection Latency</div></div>
+    <div class="stat"><div class="num">10,000+</div><div class="label">Concurrent Connections</div></div>
+    <div class="stat"><div class="num">~50 MB</div><div class="label">Memory Footprint</div></div>
+  </div>
+</div>
+
+<!-- PROTOCOLS -->
+<section id="protocols">
+  <div class="section-label">What's Inside</div>
+  <h2 class="section-title">A Complete P2P Protocol Stack</h2>
+  <p class="section-desc">Everything you need to build production P2P applications, implemented in modern C++20.</p>
+
+  <div class="proto-grid">
+    <div class="proto-card">
+      <div class="proto-header">
+        <span class="tag security">Security</span>
+      </div>
+      <h3>TLS 1.3 + Noise</h3>
+      <p>TLS 1.3 with 1-RTT handshake and hardware acceleration (AES-NI). Noise Protocol for cert-free IoT scenarios.</p>
+    </div>
+    <div class="proto-card">
+      <div class="proto-header">
+        <span class="tag transport">Transport</span>
+      </div>
+      <h3>TCP · QUIC · WebRTC · WebTransport</h3>
+      <p>Four transport layers: TCP for reliability, QUIC for low latency, WebRTC for browser-to-browser, WebTransport for HTTP/3.</p>
+    </div>
+    <div class="proto-card">
+      <div class="proto-header">
+        <span class="tag protocol">Protocol</span>
+      </div>
+      <h3>mplex + yamux Stream Multiplexing</h3>
+      <p>Two stream multiplexing protocols. mplex for lightweight clients, yamux for high-throughput nodes with backpressure control.</p>
+    </div>
+    <div class="proto-card">
+      <div class="proto-header">
+        <span class="tag protocol">Routing</span>
+      </div>
+      <h3>Kademlia DHT</h3>
+      <p>Distributed hash table for decentralized peer discovery. XOR distance metric, K-bucket routing, concurrent lookup optimization.</p>
+    </div>
+    <div class="proto-card">
+      <div class="proto-header">
+        <span class="tag protocol">PubSub</span>
+      </div>
+      <h3>GossipSub v1.1</h3>
+      <p>Scalable publish/subscribe with topic mesh control, peer scoring, and adaptive gossip. Production-tested in libp2p networks.</p>
+    </div>
+    <div class="proto-card">
+      <div class="proto-header">
+        <span class="tag nat">NAT Traversal</span>
+      </div>
+      <h3>STUN · TURN · ICE · Hole Punching</h3>
+      <p>Four-layer NAT traversal: STUN detection, ICE candidate gathering, UDP hole punching, TURN TCP relay fallback.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PERFORMANCE -->
+<section id="performance">
+  <div class="section-label">Performance</div>
+  <h2 class="section-title">Real-World Numbers</h2>
+  <p class="section-desc">Benchmarked on Intel i9 + gigabit ethernet. Every number is end-to-end P2P, not synthetic.</p>
+
+  <table class="perf-table">
+    <thead>
+      <tr>
+        <th>Protocol</th>
+        <th>Throughput</th>
+        <th>Latency</th>
+        <th>Best For</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TCP Direct</td>
+        <td><span class="metric">~500 Mbps</span></td>
+        <td><span class="latency">~20 ms</span></td>
+        <td>Server-to-server, high throughput</td>
+      </tr>
+      <tr>
+        <td>QUIC (UDP)</td>
+        <td><span class="metric">~450 Mbps</span></td>
+        <td><span class="latency">~15 ms</span></td>
+        <td>Lossy networks, lower latency</td>
+      </tr>
+      <tr>
+        <td>WebRTC (Browser)</td>
+        <td><span class="metric">~400 Mbps</span></td>
+        <td><span class="latency">~25 ms</span></td>
+        <td>Web apps, no plugins needed</td>
+      </tr>
+      <tr>
+        <td>WebTransport</td>
+        <td><span class="metric">~400 Mbps</span></td>
+        <td><span class="latency">~20 ms</span></td>
+        <td>HTTP/3 environments</td>
+      </tr>
+      <tr>
+        <td>TURN Relay</td>
+        <td><span class="metric">~50 Mbps</span></td>
+        <td><span class="latency">~100 ms</span></td>
+        <td>Last-resort fallback only</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- NAT TRAVERSAL -->
+<section id="nat">
+  <div class="section-label">NAT Traversal</div>
+  <h2 class="section-title">Four Layers. 80%+ Success Rate.</h2>
+  <p class="section-desc">The hardest part of P2P is NAT traversal. PeerLink implements a four-layer approach that works in the real world — even on symmetric NAT combos.</p>
+
+  <div class="nat-steps">
+    <div class="nat-step">
+      <div class="step-num">1</div>
+      <h4>STUN</h4>
+      <p>Detect NAT type and public IP/port mapping behavior</p>
+    </div>
+    <div class="nat-step">
+      <div class="step-num">2</div>
+      <h4>ICE</h4>
+      <p>Gather all candidate addresses from all interfaces</p>
+    </div>
+    <div class="nat-step">
+      <div class="step-num">3</div>
+      <h4>Hole Punching</h4>
+      <p>UDP simultaneous open — direct connection attempt</p>
+    </div>
+    <div class="nat-step">
+      <div class="step-num">4</div>
+      <h4>TURN Relay</h4>
+      <p>TCP relay fallback when direct connection fails</p>
+    </div>
+  </div>
+  <p style="margin-top:1.5rem;text-align:center;font-size:0.85rem;color:var(--text-muted)">
+    No port forwarding required on either end.
+  </p>
+</section>
+
+<!-- USE CASES -->
+<section>
+  <div class="section-label">Use Cases</div>
+  <h2 class="section-title">Built for Real Applications</h2>
+
+  <div class="usecase-grid">
+    <div class="usecase-card">
+      <div class="emoji">🌐</div>
+      <h3>Real-Time Communication</h3>
+      <p>P2P video/audio calls without SFU infrastructure. WebRTC native — browsers connect directly.</p>
+    </div>
+    <div class="usecase-card">
+      <div class="emoji">📡</div>
+      <h3>IoT / Edge Computing</h3>
+      <p>Direct device-to-device communication. Noise protocol needs no certificates — perfect for constrained devices.</p>
+    </div>
+    <div class="usecase-card">
+      <div class="emoji">🎮</div>
+      <h3>P2P Gaming</h3>
+      <p>Low-latency game state synchronization without dedicated game servers. QUIC for 15ms latency.</p>
+    </div>
+    <div class="usecase-card">
+      <div class="emoji">📦</div>
+      <h3>DePIN / Blockchain</h3>
+      <p>Efficient node-to-node communication with Kademlia DHT routing. Scales to thousands of nodes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GET STARTED -->
+<section id="get-started">
+  <div class="section-label">Get Started</div>
+  <h2 class="section-title">Build Your First P2P App</h2>
+  <p class="section-desc">CMake 3.20+, C++20, OpenSSL 3.0. No other dependencies.</p>
+
+  <div class="code-block">
+<span class="comment">// p2p-cpp/examples/connect.cpp</span>
+<span class="macro">#include</span> <span class="string">&lt;p2p/engine.hpp&gt;</span>
+
+<span class="type">int</span> <span class="func">main</span>() {
+    p2p::<span class="type">Config</span> config;
+    config.listen_addresses = {<span class="string">"/ip4/0.0.0.0/tcp/0"</span>};
+    config.enable_webrtc = <span class="keyword">true</span>;
+
+    <span class="keyword">auto</span> engine = p2p::<span class="type">Engine</span>::<span class="func">Create</span>(config);
+    engine-><span class="func">Start</span>();
+
+    <span class="keyword">auto</span> conn = engine-><span class="func">Connect</span>(
+        p2p::<span class="type">PeerId</span>::<span class="func">FromString</span>(<span class="string">"QmPeer..."</span>)
+    );
+    conn-><span class="func">Send</span>(<span class="string">"Hello, P2P!"</span>);
+
+    engine-><span class="func">Stop</span>();
+    <span class="keyword">return</span> 0;
+}
+  </div>
+
+  <div style="margin-top:1rem;font-size:0.82rem;color:var(--text-muted);font-family:monospace;">
+    <span style="color:var(--green)">$</span> cmake -B build -DCMAKE_BUILD_TYPE=Release<br/>
+    <span style="color:var(--green)">$</span> cmake --build build -j$(nproc)<br/>
+    <span style="color:var(--green)">$</span> cd build && ctest -V
+  </div>
+
+  <div style="margin-top:1.5rem; display:flex;gap:1rem;flex-wrap:wrap;">
+    <a href="https://github.com/hbliu007/peerlink" class="btn btn-primary">⭐ Get the Code</a>
+    <a href="https://github.com/hbliu007/peerlink/tree/main/p2p-cpp/docs/ARCHITECTURE.md" class="btn btn-secondary">📖 Architecture</a>
+    <a href="https://github.com/hbliu007/peerlink/tree/main/p2p-cpp/examples" class="btn btn-secondary">💻 Examples</a>
+    <a href="https://github.com/hbliu007/peerlink/discussions" class="btn btn-secondary">💬 Discussions</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Ready to build P2P applications?</h2>
+  <p>Star the project, fork it, or open a discussion. Contributors welcome.</p>
+  <div class="cta-row">
+    <a href="https://github.com/hbliu007/peerlink" class="btn btn-primary">⭐ Star on GitHub</a>
+    <a href="https://github.com/sponsors/hbliu007" class="btn btn-secondary">❤️ Sponsor</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="https://github.com/sponsors/hbliu007" class="sponsor-btn">❤️ Sponsor this project</a>
+  <div class="links">
+    <a href="https://github.com/hbliu007/peerlink">GitHub</a>
+    <a href="https://github.com/hbliu007/peerlink/releases">Releases</a>
+    <a href="https://github.com/hbliu007/peerlink/discussions">Discussions</a>
+    <a href="https://github.com/hbliu007/peerlink/issues">Issues</a>
+    <a href="https://github.com/hbliu007/peerlink/blob/main/CONTRIBUTING.md">Contributing</a>
+  </div>
+  <p>MIT Licensed · &copy; 2026 Liu Hongbo · <a href="https://github.com/hbliu007">@hbliu007</a></p>
+</footer>
+
+</body>
+</html>

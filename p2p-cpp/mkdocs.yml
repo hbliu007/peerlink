@@ -1,0 +1,129 @@
+site_name: PeerLink
+site_description: 开源 P2P 安全访问平台
+site_author: PeerLink Contributors
+copyright: Copyright &copy; 2024 PeerLink Contributors
+
+theme:
+  name: material
+  language: zh
+  custom_dir: overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: 2196F3
+      accent: 00BFA5
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: 2196F3
+      accent: 00BFA5
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+  icon:
+    logo: material/network
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - i18n:
+      default_language: zh
+      languages:
+        zh: 中文
+        en: English
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-org/peerlink
+      name: GitHub
+  version:
+    provider: mike
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - 首页: index.md
+  - 教程:
+      - tutorials/index.md
+      - 快速开始: tutorials/quick-start.md
+      - 部署服务端: tutorials/deployment.md
+      - 建立连接: tutorials/first-connection.md
+      - SSH 隧道: tutorials/ssh-tunnel.md
+      - 手机连接: tutorials/mobile-connect.md
+      - Python SDK: tutorials/python-sdk.md
+  - 操作指南:
+      - how-to/index.md
+      - 部署到阿里云: how-to/deploy-aliyun.md
+      - 配置 TLS/WSS: how-to/configure-tls.md
+      - 防火墙穿透: how-to/firewall-traversal.md
+      - 限速配置: how-to/rate-limiting.md
+      - 监控告警: how-to/monitoring.md
+      - 安全加固: how-to/security-hardening.md
+      - 从源码编译: how-to/build-from-source.md
+      - 性能调优: how-to/performance.md
+      - 故障排查: how-to/troubleshooting.md
+      - 配置指南: how-to/configuration.md
+  - 概念:
+      - concepts/index.md
+      - PeerLink 如何工作: concepts/how-peerlink-works.md
+      - 架构总览: concepts/architecture.md
+      - NAT 穿透原理: concepts/nat-traversal.md
+      - DCUtR 协议: concepts/dcutr-protocol.md
+      - Circuit Relay: concepts/circuit-relay.md
+      - 安全模型: concepts/security-model.md
+      - 性能基准: concepts/performance.md
+      - 竞品对比: concepts/comparisons.md
+  - 参考文档:
+      - reference/index.md
+      - C API: reference/c-api.md
+      - Python API: reference/python-api.md
+      - REST API: reference/api.md
+      - 配置参考: reference/config.md
+      - CLI 命令: reference/cli.md
+      - 协议规范: reference/protocols.md
+      - 协议详情: reference/protocol.md
+      - 安全参考: reference/security.md
+      - 版本日志: reference/changelog.md
+      - FAQ: reference/faq.md
+  - 贡献:
+      - contributing/index.md
+      - 贡献概览: contributing/overview.md
+      - 开发指南: contributing/development.md
+      - 文档贡献: contributing/documentation.md
+      - 测试指南: contributing/testing.md

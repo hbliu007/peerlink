@@ -1,0 +1,59 @@
+// Circuit Relay v2 Protocol Messages
+// Based on libp2p spec: https://github.com/libp2p/specs/blob/master/relay/circuit-v2.md
+
+syntax = "proto3";
+
+package p2p.relay.v2;
+
+// Circuit Relay v2 main message
+message CircuitRelay {
+  enum Type {
+    RESERVE = 0;
+    CONNECT = 1;
+    STATUS = 2;
+  }
+
+  Type type = 1;
+  Reservation reservation = 2;
+  Peer peer = 3;
+  Status status = 4;
+}
+
+// Reservation information
+message Reservation {
+  uint64 expire = 1;        // Unix timestamp (seconds)
+  bytes addr = 2;           // Relay multiaddr
+  bytes voucher = 3;        // Signed envelope (serialized)
+  uint64 limit_duration = 4;  // Max duration (seconds)
+  uint64 limit_data = 5;      // Max data (bytes)
+}
+
+// Peer information
+message Peer {
+  bytes id = 1;             // Peer ID
+  repeated bytes addrs = 2; // Multiaddrs
+}
+
+// Status response
+message Status {
+  enum Code {
+    OK = 0;
+    RESERVATION_REFUSED = 1;
+    RESOURCE_LIMIT_EXCEEDED = 2;
+    PERMISSION_DENIED = 3;
+    CONNECTION_FAILED = 4;
+    NO_RESERVATION = 5;
+    MALFORMED_MESSAGE = 6;
+    UNEXPECTED_MESSAGE = 7;
+  }
+
+  Code code = 1;
+  string text = 2;
+}
+
+// Reservation Voucher (payload for Signed Envelope)
+message ReservationVoucher {
+  bytes relay = 1;          // Relay peer ID
+  bytes peer = 2;           // Client peer ID
+  uint64 expiration = 3;    // Unix timestamp (seconds)
+}
