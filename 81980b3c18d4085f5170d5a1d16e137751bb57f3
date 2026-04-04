@@ -1,0 +1,52 @@
+p2p-cpp/README.md
+  15ffc695e74c47cc 1,3,5-7,12,14,16,20,22,24,27-32,35,37-39,41-43,45-46,48-50,52-53,55-57,59-61,63,65,68-70,72,76,79-82,85,88-95,98,100,102,105-107,110-143,146-148,150,153-156,161-166,168,170-174,176,178-186,190,192-196,200,204,206,208
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "81980b3c18d4085f5170d5a1d16e137751bb57f3",
+  "prompts": {
+    "15ffc695e74c47cc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "73a5b1d7-cfa5-4313-840b-f52fac70d732",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 143,
+      "total_deletions": 288,
+      "accepted_lines": 143,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/f52c215998708b7cb8196da7249bc4bfe6cb10b470f87f2c3edc839d2a1be0a3"
+    },
+    "51ae8f1a6553a1ca": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "198b4b35-e779-4e79-a94c-413e12e5814d",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 1652,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/44fff682f2b3a080af1706b90b37067a01e71b673a02a7d530e4b5845dea8414"
+    },
+    "5af08f8796e56578": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "42de7868-73c5-4436-bcdf-71ab5d977dcd",
+        "model": "claude-opus-4-6-thinking"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 38,
+      "total_deletions": 38,
+      "accepted_lines": 38,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/24d2dbaf30300f169cc2477f742df2dfcf54e476cbb1db45c972ae0bc66456b0"
+    }
+  }
+}
