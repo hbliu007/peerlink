@@ -1,0 +1,24 @@
+back-to-office/.github/images/architecture.svg
+  51ae8f1a6553a1ca 1-81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "7055bae58d8a18bed24b170e88097b21c6536d43",
+  "prompts": {
+    "51ae8f1a6553a1ca": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "198b4b35-e779-4e79-a94c-413e12e5814d",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 81,
+      "total_deletions": 0,
+      "accepted_lines": 81,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/6f3112d556a19d268e51ed0e60f8d4f48db318aaa3b907c7271e38e5f7b82ebc"
+    }
+  }
+}
