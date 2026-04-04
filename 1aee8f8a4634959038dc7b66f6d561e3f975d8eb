@@ -1,0 +1,60 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "1aee8f8a4634959038dc7b66f6d561e3f975d8eb",
+  "prompts": {
+    "1520dc255e086586": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "aaeab72d-00ef-4a07-a973-ddcbdbfa390a",
+        "model": "claude-opus-4.6"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 4,
+      "accepted_lines": 0,
+      "overriden_lines": 0
+    },
+    "361c6f0a94005946": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85a17d17-cf86-4348-9316-9412c2c5796d",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 46,
+      "overriden_lines": 0
+    },
+    "6e5f831c4b2b82dc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9927335d-3677-4429-ab2e-dec31197d99c",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 7,
+      "overriden_lines": 0
+    },
+    "e6862ac810ad8cfd": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "7fd3456e-8afc-4ab9-a9c9-2eaa9dcffd26",
+        "model": "default"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 5,
+      "overriden_lines": 0
+    }
+  }
+}
