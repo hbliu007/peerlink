@@ -1,0 +1,115 @@
+p2p-cpp/tests/unit/transport/test_relay_transport.cpp
+  5af08f8796e56578 1-245
+p2p-cpp/tests/unit/protocol/test_stun.cpp
+  5af08f8796e56578 1-533
+p2p-cpp/tests/servers/relay/CMakeLists.txt
+  5af08f8796e56578 28-38
+p2p-cpp/tests/unit/CMakeLists.txt
+  5af08f8796e56578 120-155,169-180,220-272
+p2p-cpp/tests/unit/relay/test_rate_limiter.cpp
+  5af08f8796e56578 8,36-38,41,43,46-47,49-50,52-55,57,158,161,173-174,202-203,226,235,240,264,267-367
+p2p-cpp/tests/unit/protocol/test_message_codec.cpp
+  5af08f8796e56578 1-235
+p2p-cpp/tests/unit/protocol/test_relay_message.cpp
+  5af08f8796e56578 1-297
+p2p-cpp/tests/unit/transport/CMakeLists.txt
+  5af08f8796e56578 1-42
+p2p-cpp/tests/unit/protocol/test_dcutr.cpp
+  5af08f8796e56578 169-171
+p2p-cpp/tests/did/test_did_auth.cpp
+  5af08f8796e56578 29,31
+p2p-cpp/tests/did/test_did_storage.cpp
+  5af08f8796e56578 34,36,51,53
+p2p-cpp/tests/unit/transport/test_udp_transport.cpp
+  5af08f8796e56578 1-473
+p2p-cpp/tests/unit/transport/test_message_framer.cpp
+  5af08f8796e56578 1-208
+p2p-cpp/tests/unit/core/CMakeLists.txt
+  5af08f8796e56578 1-19
+p2p-cpp/tests/unit/core/test_p2p_client.cpp
+  5af08f8796e56578 1-236
+p2p-cpp/tests/unit/utils/test_service_config.cpp
+  5af08f8796e56578 1-521
+p2p-cpp/tests/unit/utils/CMakeLists.txt
+  5af08f8796e56578 1-28
+p2p-cpp/tests/unit/utils/test_logger.cpp
+  5af08f8796e56578 1-368
+p2p-cpp/tests/servers/relay/test_port_pool.cpp
+  5af08f8796e56578 4-5
+p2p-cpp/tests/unit/nat/test_connection.cpp
+  5af08f8796e56578 1-291
+p2p-cpp/tests/unit/nat/test_multiaddr_converter.cpp
+  5af08f8796e56578 1-489
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "6638e945fd161c8b156b9eafc5500dbdb440ed53",
+  "prompts": {
+    "1520dc255e086586": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "aaeab72d-00ef-4a07-a973-ddcbdbfa390a",
+        "model": "claude-opus-4.6"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 672,
+      "overriden_lines": 0
+    },
+    "15ffc695e74c47cc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "73a5b1d7-cfa5-4313-840b-f52fac70d732",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 18456,
+      "overriden_lines": 0
+    },
+    "51ae8f1a6553a1ca": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "198b4b35-e779-4e79-a94c-413e12e5814d",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 1651,
+      "overriden_lines": 0
+    },
+    "5af08f8796e56578": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "42de7868-73c5-4436-bcdf-71ab5d977dcd",
+        "model": "claude-opus-4-6-thinking"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 4891,
+      "overriden_lines": 0
+    },
+    "64b53bd845f03f01": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1471c5fc-8d62-4553-91f8-a27b6fadafd6",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 5153,
+      "overriden_lines": 0
+    }
+  }
+}
