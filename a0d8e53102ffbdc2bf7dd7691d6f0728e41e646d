@@ -1,0 +1,157 @@
+p2p-cpp/tests/system/conftest.py
+  e6862ac810ad8cfd 6,10-33,37-38
+p2p-cpp/include/p2p/nat/connection.hpp
+  6e5f831c4b2b82dc 23,28,33,38,43,48,53,65-71,76,81,99-105,110
+p2p-cpp/tests/unit/crypto/test_endianness.cpp
+  6e5f831c4b2b82dc 60,84,97
+p2p-cpp/tests/did_integration/README.md
+  e6862ac810ad8cfd 56-57,59,78-81,83,104,140,143-145,152-153,155,162,164-165,178,180-181
+p2p-cpp/tests/system/requirements.txt
+  e6862ac810ad8cfd 8
+p2p-cpp/include/p2p/nat/multiaddr_converter.hpp
+  6e5f831c4b2b82dc 23,30,37,44,50,55,60
+p2p-cpp/src/nat/connection.cpp
+  e6862ac810ad8cfd 18,80
+  6e5f831c4b2b82dc 21,27,30,37,50,53,56,58,61,66,83,85,88,90,93,96,98,101,104,106,109,111,114,116
+p2p-cpp/src/nat/multiaddr_converter.cpp
+  6e5f831c4b2b82dc 18,42,48,54,58,61,68,71,78,111,120,130,140,149,163
+  e6862ac810ad8cfd 94
+p2p-cpp/.github/workflows/ci.yml
+  6e5f831c4b2b82dc 29,55,87,119,152,159,162,164,166,168,195,213
+p2p-cpp/tests/system/README.md
+  e6862ac810ad8cfd 33,36-37,56-62,64-66,68,99,113,115-117,126,135,137-140
+p2p-cpp/tests/integration/test_relay_v2_integration.cpp
+  6e5f831c4b2b82dc 9
+p2p-cpp/tests/did/test_did_auth.cpp
+  e6862ac810ad8cfd 12,15,50,55,60,67-68,78
+p2p-cpp/tests/unit/crypto/test_ed25519_signer.cpp
+  6e5f831c4b2b82dc 84,92
+p2p-cpp/tests/system/utils/test_clients.py
+  e6862ac810ad8cfd 8-9,12-14,16,38-40,74-93,102-104,128,139,184,212,255
+p2p-cpp/src/protocol/dcutr.cpp
+  6e5f831c4b2b82dc 13,19,38,54,84,93,98,101,104,110,115,118,121,126,133,137,148,169,181-182
+p2p-cpp/src/protocol/CMakeLists.txt
+  6e5f831c4b2b82dc 1
+p2p-cpp/scripts/test-wss.sh
+  361c6f0a94005946 1-44
+p2p-cpp/tests/unit/protocol/test_dcutr.cpp
+  e6862ac810ad8cfd 20,33,41,56,72,74-75,80,82,94-95,98,109,111,118,126-127,130,145,156
+p2p-cpp/docs/phase4-checklist.md
+  361c6f0a94005946 1-240
+p2p-cpp/tests/unit/test_nat.cpp
+  e6862ac810ad8cfd 30,55,61,118,174,197-198,261,302
+p2p-cpp/include/p2p/core/p2p_client.hpp
+  e6862ac810ad8cfd 41-44,47-65,181-184,188-190,195-202,218-221
+  6e5f831c4b2b82dc 81,194
+p2p-cpp/tests/system/run_tests.sh
+  e6862ac810ad8cfd 19-23
+p2p-cpp/tests/unit/relay/test_rate_limiter.cpp
+  6e5f831c4b2b82dc 1,22,35,59,83,107,124,135,150,169,185,213,237,252
+p2p-cpp/docs/phase2-wss-summary.md
+  361c6f0a94005946 1-169
+p2p-cpp/tests/security/test_relay_v2_security.cpp
+  e6862ac810ad8cfd 253,262,267-269,272-275
+  6e5f831c4b2b82dc 9
+p2p-cpp/tests/did/test_did_crypto.cpp
+  e6862ac810ad8cfd 52,54-55,63,65-66,68,74,77
+p2p-cpp/include/p2p/net/socket.hpp
+  e6862ac810ad8cfd 41-45,106-114,208-220,290-299
+  6e5f831c4b2b82dc 38-40,69,77,85,90,95,100,105,141,147,154,161,166,173,181,186,191,196,201,206,262,267,272,279,284,289
+p2p-cpp/tests/nat/test_stun_client.cpp
+  e6862ac810ad8cfd 1,39,68-69,116,154,170,190,209,264,292
+p2p-cpp/include/p2p/protocol/dcutr.hpp
+  6e5f831c4b2b82dc 73,76-77,80,86,101,104,107,110,113,116,119
+p2p-cpp/tests/stun/stun_server_test.cpp
+  6e5f831c4b2b82dc 156,159-161,163
+p2p-cpp/tests/did_integration/run_tests.sh
+  e6862ac810ad8cfd 19-20
+p2p-cpp/docs/wss-implementation.md
+  361c6f0a94005946 1-266
+p2p-cpp/README.md
+  e6862ac810ad8cfd 50-61
+  361c6f0a94005946 142-193
+p2p-cpp/tests/servers/relay/test_turn_message.cpp
+  361c6f0a94005946 422-467
+p2p-cpp/src/core/p2p_client.cpp
+  e6862ac810ad8cfd 10-61,69-71,84-85,90-93,99,101-102,106,115-118,122-123,131,134-135,139-140,195-196,198-199,211-212,225-226,228,248-249,256-257,268-269,271-275,277-286,289-292,294-300,303-330,332-337,392,433-437,444-486,488-499,501
+p2p-cpp/src/net/socket.cpp
+  e6862ac810ad8cfd 18,22,30,45,54,61,64-65,68,71,76,88,94,96,101,107,134,145,154,157-158,161,163,166,171,175,179,182-183,199,230,232,235,239,250,252,258,264,269,275,302,308,340,356,367,371,377,436
+p2p-cpp/src/nat/puncher.cpp
+  e6862ac810ad8cfd 204,243,422,430,432,445,450
+  6e5f831c4b2b82dc 48,87,94,102,109,129,146,328,336,343,349,358,365,369,374,378,396-397
+p2p-cpp/tests/integration/test_dcutr_integration.cpp
+  6e5f831c4b2b82dc 34
+  e6862ac810ad8cfd 11-33,58,61,70,73,78-79,82-83,98,102,104,106-107,123,132,143,146-147,154,158,160,162,165,171,189-190,200,206,209,232,238-239,244-245,247-248,256,260,262,264-265,325,348,351
+p2p-cpp/tests/servers/relay/test_allocation.cpp
+  6e5f831c4b2b82dc 1,117-118,133-134
+p2p-cpp/tests/integration/test_p2p_connection.cpp
+  6e5f831c4b2b82dc 8
+p2p-cpp/tests/unit/nat/test_puncher.cpp
+  e6862ac810ad8cfd 15-21,34-35,38,42,45-47,55,68-69,72,76,79-80,99,105-107,110,122,130-131,147,164,169,174
+p2p-cpp/include/p2p/nat/stun_client.hpp
+  6e5f831c4b2b82dc 64,66,71,73
+p2p-cpp/tests/servers/relay/test_reservation.cpp
+  6e5f831c4b2b82dc 1
+p2p-cpp/tests/did_integration/conftest.py
+  e6862ac810ad8cfd 8,10-15,26,29,47,64
+p2p-cpp/include/p2p/nat/puncher.hpp
+  6e5f831c4b2b82dc 35,40,51,55,73,77,97,102
+p2p-cpp/tests/integration/test_helpers.cpp
+  6e5f831c4b2b82dc 10
+p2p-cpp/tests/system/scenarios/test_fault_recovery.py
+  e6862ac810ad8cfd 8-9,14-21,26-28,33,41,50-52,57,60,70,75,79,87-89,96,106-110,116
+p2p-cpp/tests/integration/test_helpers.hpp
+  6e5f831c4b2b82dc 11,59,92
+p2p-cpp/tests/did_integration/utils/did_client.py
+  e6862ac810ad8cfd 6,65,78,100,114-117,119,134,143,149
+p2p-cpp/tests/servers/relay/test_port_pool.cpp
+  6e5f831c4b2b82dc 1
+p2p-cpp/src/nat/stun_client.cpp
+  e6862ac810ad8cfd 21,55,160,189
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "a0d8e53102ffbdc2bf7dd7691d6f0728e41e646d",
+  "prompts": {
+    "361c6f0a94005946": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85a17d17-cf86-4348-9316-9412c2c5796d",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 863,
+      "overriden_lines": 0
+    },
+    "6e5f831c4b2b82dc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9927335d-3677-4429-ab2e-dec31197d99c",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 240,
+      "overriden_lines": 0
+    },
+    "e6862ac810ad8cfd": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "7fd3456e-8afc-4ab9-a9c9-2eaa9dcffd26",
+        "model": "default"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 736,
+      "overriden_lines": 0
+    }
+  }
+}
