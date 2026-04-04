@@ -1,0 +1,48 @@
+COMPREHENSIVE_OPTIMIZATION_PLAN.md
+  5af08f8796e56578 33
+p2p-cpp/.gitignore
+  5af08f8796e56578 1-14
+p2p-cpp/QUICK_START.md
+  5af08f8796e56578 14
+p2p-cpp/tools/p2p-tunnel/DEPLOY_MOBILE.md
+  5af08f8796e56578 15
+p2p-cpp/tools/p2p-tunnel/README_SINGLE_SESSION.md
+  5af08f8796e56578 32
+p2p-cpp/tools/p2p-tunnel/CHANGES.md
+  5af08f8796e56578 153
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "ba02276e20ab02d643a78c4f594ee42aa8b0a1bb",
+  "prompts": {
+    "51ae8f1a6553a1ca": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "198b4b35-e779-4e79-a94c-413e12e5814d",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 20,
+      "total_deletions": 15,
+      "accepted_lines": 29,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/87d028eac6ca64516943030814507b8587f1a2fdf59d3f449203b87655623218"
+    },
+    "5af08f8796e56578": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "42de7868-73c5-4436-bcdf-71ab5d977dcd",
+        "model": "claude-opus-4-6-thinking"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 19,
+      "total_deletions": 5,
+      "accepted_lines": 19,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/bd1cfe92619ab6aed3ea3ce3491ac6c1638d7b65e4a271e530b1bb0882aeb301"
+    }
+  }
+}
