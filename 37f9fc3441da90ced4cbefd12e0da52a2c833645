@@ -1,0 +1,50 @@
+p2p-cpp/config/peerlink.example.toml
+  5af08f8796e56578 29
+p2p-cpp/examples/basic/basic_client.cpp
+  5af08f8796e56578 75
+p2p-cpp/tests/servers/signaling/test_message_handler.cpp
+  5af08f8796e56578 50,54,62,65,72
+p2p-cpp/deploy_aliyun.sh
+  5af08f8796e56578 3-4,8-9
+p2p-cpp/deploy_remote.sh
+  5af08f8796e56578 12-14
+p2p-cpp/DEPLOYMENT_GUIDE.md
+  5af08f8796e56578 5,7-8,22,33,36,56,74-75,80,89,122-123,127-128,163-164,205,208,218,242,244,260
+p2p-cpp/config/peerlink.aliyun.example.toml
+  5af08f8796e56578 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "37f9fc3441da90ced4cbefd12e0da52a2c833645",
+  "prompts": {
+    "51ae8f1a6553a1ca": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "198b4b35-e779-4e79-a94c-413e12e5814d",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 1652,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/44fff682f2b3a080af1706b90b37067a01e71b673a02a7d530e4b5845dea8414"
+    },
+    "5af08f8796e56578": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "42de7868-73c5-4436-bcdf-71ab5d977dcd",
+        "model": "claude-opus-4-6-thinking"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 38,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/24d2dbaf30300f169cc2477f742df2dfcf54e476cbb1db45c972ae0bc66456b0"
+    }
+  }
+}

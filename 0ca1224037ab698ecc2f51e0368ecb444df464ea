@@ -1,0 +1,32 @@
+docs/images/benchmark.svg
+  15ffc695e74c47cc 1-67
+docs/images/hero-dark.svg
+  15ffc695e74c47cc 1-123
+p2p-cpp/README.md
+  15ffc695e74c47cc 1-5,11-15,25,30,32-33,35,37-42,44-46,48-49,51-60,63-76,79,81,85-88,90,92-98,100,102,104-107,110,112,114-115,117-124,126,128,130,132-141,143-154,157,162,165-168,171,173-178,180-181,189,191,193,195-199,201,207,209,214
+docs/images/hero-light.svg
+  15ffc695e74c47cc 1-124
+docs/images/architecture.svg
+  15ffc695e74c47cc 1-77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "0ca1224037ab698ecc2f51e0368ecb444df464ea",
+  "prompts": {
+    "15ffc695e74c47cc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "73a5b1d7-cfa5-4313-840b-f52fac70d732",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 138,
+      "total_deletions": 148,
+      "accepted_lines": 529,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/b091acae129b006e2306bc5c4460399b684ec97d41b0746f8dece2774ddf39cb"
+    }
+  }
+}

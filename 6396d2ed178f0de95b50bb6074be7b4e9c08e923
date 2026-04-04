@@ -1,0 +1,119 @@
+p2p-cpp/include/p2p/transport/message_framer.hpp
+  5af08f8796e56578 1-85
+p2p-cpp/examples/basic/basic_client.cpp
+  1520dc255e086586 3,5,11-12,16-17,19-66,69,75-84,90-99,103-107,110,112-114,116,118,120,126-129,131-133,138,145-147,153-154
+p2p-cpp/.gitignore
+  5af08f8796e56578 77,79-81
+  15ffc695e74c47cc 78,82
+p2p-cpp/src/servers/did/CMakeLists.txt
+  1520dc255e086586 39
+p2p-cpp/tools/p2p-tunnel/relay_tunnel_common.hpp
+  51ae8f1a6553a1ca 117-118,148-152
+p2p-cpp/src/core/tcp_connection.cpp
+  64b53bd845f03f01 23,31,49,54,65,72,82,89,93,102,105,163,169,175,181,199,201,219,224
+p2p-cpp/include/p2p/core/connection.hpp
+  64b53bd845f03f01 10-11,31
+p2p-cpp/src/transport/relay_transport.cpp
+  1520dc255e086586 4,77-80,113-116,118,124-125,165-166,168-173,175-177,180,183-184,186-187,192,194-196,198-200,205-206,208-209,240-241,255-256,258-263,265-268,270-276,278-284,286-287,291-295,299,301-308,319-320,322-331,333-335,347,349-354,360-370,390
+  5af08f8796e56578 56,344-346,348,355-359,381-386,435
+  64b53bd845f03f01 2,104,117,123,174,185,197,202-203,239,245,264,321,332,432
+p2p-cpp/src/servers/did/did_server.cpp
+  1520dc255e086586 80
+p2p-cpp/src/nat/stun_client.cpp
+  1520dc255e086586 4,137-138,148-157,163,168-171,182,184-187,198,202-210
+p2p-cpp/src/net/socket.cpp
+  5af08f8796e56578 212-220
+p2p-cpp/include/p2p/core/types.hpp
+  64b53bd845f03f01 9,64-103
+p2p-cpp/include/p2p/core/p2p_client.hpp
+  1520dc255e086586 169-173
+  5af08f8796e56578 13,217,235
+  64b53bd845f03f01 233
+p2p-cpp/include/p2p/core/tcp_connection.hpp
+  64b53bd845f03f01 44,66,72
+p2p-cpp/CMakeLists.txt
+  1520dc255e086586 71-76,78,81-86
+p2p-cpp/include/p2p/transport/relay_transport.hpp
+  5af08f8796e56578 11-12,146,153-154
+  1520dc255e086586 134-135
+p2p-cpp/src/core/p2p_client.cpp
+  64b53bd845f03f01 3,98,129,136,143,180-181,207,224,240,302-305,363,505-506,536-542,545-557,559-637,649-651
+  1520dc255e086586 241,243,251-252,444-447
+  5af08f8796e56578 75,100-103,105,110,117-122,124,128,130,139-141,144,149-150,157-158,162,169-172,177-178,186,192,197-199,201,204,209,212-213,235,237-239,242,244-250,253-255,257-260,267-269,416,420,436,440-441,456-462,507,509-511,513-514,521-526,528-529
+p2p-cpp/src/utils/CMakeLists.txt
+  1520dc255e086586 1-6,8,11-18
+p2p-cpp/src/protocol/message.cpp
+  5af08f8796e56578 250-256
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "6396d2ed178f0de95b50bb6074be7b4e9c08e923",
+  "prompts": {
+    "1520dc255e086586": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "aaeab72d-00ef-4a07-a973-ddcbdbfa390a",
+        "model": "claude-opus-4.6"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 1069,
+      "total_deletions": 138,
+      "accepted_lines": 984,
+      "overriden_lines": 9
+    },
+    "15ffc695e74c47cc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "73a5b1d7-cfa5-4313-840b-f52fac70d732",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 18738,
+      "total_deletions": 92,
+      "accepted_lines": 18443,
+      "overriden_lines": 15
+    },
+    "51ae8f1a6553a1ca": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "198b4b35-e779-4e79-a94c-413e12e5814d",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 8383,
+      "total_deletions": 1464,
+      "accepted_lines": 1500,
+      "overriden_lines": 176
+    },
+    "5af08f8796e56578": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "42de7868-73c5-4436-bcdf-71ab5d977dcd",
+        "model": "claude-opus-4-6-thinking"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 7792,
+      "total_deletions": 201,
+      "accepted_lines": 5113,
+      "overriden_lines": 0
+    },
+    "64b53bd845f03f01": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1471c5fc-8d62-4553-91f8-a27b6fadafd6",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 5380,
+      "total_deletions": 103,
+      "accepted_lines": 5356,
+      "overriden_lines": 0
+    }
+  }
+}

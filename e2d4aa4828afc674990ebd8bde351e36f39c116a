@@ -1,0 +1,62 @@
+p2p-cpp/src/servers/relay/forwarder.cpp
+  361c6f0a94005946 12-25,43,68,81-83,88-89,110-111
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "e2d4aa4828afc674990ebd8bde351e36f39c116a",
+  "prompts": {
+    "190cfd4f41f30a9f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019d5628-aad5-7010-a37d-5a09f5de7b07",
+        "model": "unknown"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 0,
+      "overriden_lines": 0
+    },
+    "361c6f0a94005946": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85a17d17-cf86-4348-9316-9412c2c5796d",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 23,
+      "total_deletions": 10,
+      "accepted_lines": 69,
+      "overriden_lines": 0
+    },
+    "6e5f831c4b2b82dc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9927335d-3677-4429-ab2e-dec31197d99c",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 7,
+      "overriden_lines": 0
+    },
+    "e6862ac810ad8cfd": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "7fd3456e-8afc-4ab9-a9c9-2eaa9dcffd26",
+        "model": "default"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 5,
+      "overriden_lines": 0
+    }
+  }
+}

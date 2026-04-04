@@ -1,0 +1,22 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "3155cb4c18475a9fa857f25a8518cea8a873fa66",
+  "prompts": {
+    "51ae8f1a6553a1ca": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "198b4b35-e779-4e79-a94c-413e12e5814d",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 1652,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/44fff682f2b3a080af1706b90b37067a01e71b673a02a7d530e4b5845dea8414"
+    }
+  }
+}

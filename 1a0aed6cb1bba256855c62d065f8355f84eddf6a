@@ -1,0 +1,69 @@
+p2p-cpp/include/p2p/servers/relay/forwarder.hpp
+  361c6f0a94005946 5,196
+p2p-cpp/src/protocol/dcutr.cpp
+  361c6f0a94005946 207
+p2p-cpp/src/servers/relay/forwarder.cpp
+  361c6f0a94005946 22,41,60
+p2p-cpp/src/nat/puncher.cpp
+  361c6f0a94005946 126,150-152,172-173,175
+p2p-cpp/tests/did/test_did_crypto.cpp
+  361c6f0a94005946 9-16,18-21,25-27,33-34,39,45,49,51-53,58-59,61,69-76,78-81,83,89,97-98,115-117,124
+p2p-cpp/src/servers/did/did_crypto.cpp
+  361c6f0a94005946 3-5,7,12-125,127-137,139-143,145-146,148-149,151-152,155-164,166-173,175-181,183-185,188-198,200-204,208-216,218
+p2p-cpp/src/nat/connection.cpp
+  361c6f0a94005946 39-40,42-56
+p2p-cpp/src/servers/relay/bandwidth_limiter.cpp
+  361c6f0a94005946 135
+p2p-cpp/src/servers/did/did_auth.cpp
+  361c6f0a94005946 5,12,17,19-21,23-31,33-40,42-43,45,48-50,53-58,60-63,65-76,78-79,82-83,86-98,100-101,104-107,109,112-115,117,119-134,137-166,168-170,173-174,184-187,190-194,202-203,206-215,218-221,224,227-228,232-233
+p2p-cpp/src/servers/did/did_storage.cpp
+  361c6f0a94005946 11-15,21-30,34-39
+p2p-cpp/include/servers/did/did_storage.hpp
+  361c6f0a94005946 3,23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "1a0aed6cb1bba256855c62d065f8355f84eddf6a",
+  "prompts": {
+    "361c6f0a94005946": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85a17d17-cf86-4348-9316-9412c2c5796d",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 471,
+      "total_deletions": 252,
+      "accepted_lines": 513,
+      "overriden_lines": 0
+    },
+    "6e5f831c4b2b82dc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9927335d-3677-4429-ab2e-dec31197d99c",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 7,
+      "overriden_lines": 0
+    },
+    "e6862ac810ad8cfd": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "7fd3456e-8afc-4ab9-a9c9-2eaa9dcffd26",
+        "model": "default"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 5,
+      "overriden_lines": 0
+    }
+  }
+}

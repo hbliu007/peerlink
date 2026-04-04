@@ -1,0 +1,189 @@
+p2p-cpp/include/servers/did/did_server.hpp
+  361c6f0a94005946 5,21-26,54
+  6e5f831c4b2b82dc 14,29,32,35,37,43,50
+  e6862ac810ad8cfd 4,46-47,53,56,60-62
+p2p-cpp/tests/servers/signaling/test_message_handler.cpp
+  361c6f0a94005946 664-1104
+  e6862ac810ad8cfd 1-663
+p2p-cpp/include/servers/did/did_handler.hpp
+  6e5f831c4b2b82dc 6
+p2p-cpp/src/servers/did/did_server.cpp
+  e6862ac810ad8cfd 2-4,10-11,14,19,32,37,49,53-78,81,88-89,94,97-101
+  361c6f0a94005946 5,21-28,39-46,79-80,83-85,90
+p2p-cpp/src/servers/relay/bandwidth_limiter.cpp
+  6e5f831c4b2b82dc 62-63,145
+p2p-cpp/src/servers/did/did_handler.cpp
+  e6862ac810ad8cfd 7
+p2p-cpp/src/servers/signaling/src/service_handler.cpp
+  361c6f0a94005946 1-51
+p2p-cpp/include/p2p/utils/service_config.hpp
+  361c6f0a94005946 8-17,25-31,76-77,89-90
+p2p-cpp/src/servers/signaling/include/connection_manager.hpp
+  e6862ac810ad8cfd 36-37,42-44,46-52,87-88,112-117,143-144
+  361c6f0a94005946 4,21-24,149-151
+p2p-cpp/include/servers/did/did_crypto.hpp
+  6e5f831c4b2b82dc 8,11-12
+  e6862ac810ad8cfd 16-17
+p2p-cpp/src/servers/relay/relay_server.cpp
+  361c6f0a94005946 7,54,88,103,105,271,401,422,424,514
+p2p-cpp/src/servers/stun/CMakeLists.txt
+  361c6f0a94005946 11
+  6e5f831c4b2b82dc 3-4
+p2p-cpp/src/servers/relay/forwarder.cpp
+  6e5f831c4b2b82dc 3-4,13,66,76-77,83-84,102,212,252-254
+  e6862ac810ad8cfd 75,82
+p2p-cpp/src/servers/signaling/src/message_router.cpp
+  361c6f0a94005946 1-51,93-96,232-233,235-240,242,244-251
+p2p-cpp/src/servers/did/did_crypto.cpp
+  e6862ac810ad8cfd 3,6-9,13-15,17-22,25-41,44-47,50-53,55-60
+p2p-cpp/.env.example
+  e6862ac810ad8cfd 2-3,5-7,14-15,21,24-26,40-52
+p2p-cpp/src/servers/stun/main.cpp
+  361c6f0a94005946 2,13,22,54,58
+p2p-cpp/src/servers/relay/CMakeLists.txt
+  361c6f0a94005946 36
+p2p-cpp/src/servers/signaling/src/connection_manager.cpp
+  361c6f0a94005946 13-31
+  e6862ac810ad8cfd 70-75,84,117-127,146-166,176-243,274,362-366,424-434,436-448
+p2p-cpp/include/p2p/utils/http_security.hpp
+  361c6f0a94005946 1-26
+p2p-cpp/tests/servers/signaling/test_connection_manager.cpp
+  361c6f0a94005946 1-299
+p2p-cpp/tests/servers/CMakeLists.txt
+  e6862ac810ad8cfd 4
+p2p-cpp/src/servers/signaling/src/register_handler.cpp
+  361c6f0a94005946 1-71
+p2p-cpp/include/servers/did/did_auth.hpp
+  e6862ac810ad8cfd 20-21
+  6e5f831c4b2b82dc 8,10,14
+REFACTOR_COMPLETED.md
+  361c6f0a94005946 1-121
+p2p-cpp/src/servers/signaling/include/connect_handler.hpp
+  361c6f0a94005946 1-40
+p2p-cpp/src/servers/signaling/include/message_router.hpp
+  361c6f0a94005946 1-49
+p2p-cpp/src/servers/relay/reservation_manager.cpp
+  6e5f831c4b2b82dc 7-9,55
+p2p-cpp/tests/servers/signaling/CMakeLists.txt
+  e6862ac810ad8cfd 1-10,12-17
+  361c6f0a94005946 11,18-33
+p2p-cpp/tools/p2p-tunnel/relay_tunnel_common.hpp
+  361c6f0a94005946 1-313
+p2p-cpp/src/utils/service_config.cpp
+  361c6f0a94005946 293-322,355-384
+p2p-cpp/src/servers/relay/persistence.cpp
+  6e5f831c4b2b82dc 2,18,29
+  361c6f0a94005946 4,123,205,214,228,293
+  e6862ac810ad8cfd 137,142,147,156,161,166,171,180,185,190
+p2p-cpp/src/servers/signaling/include/message_handler.hpp
+  361c6f0a94005946 3,7-9
+p2p-cpp/src/servers/signaling/include/websocket_session.hpp
+  361c6f0a94005946 6,9,12,19,29-30,48-49,52-58,67-72,75,77
+  e6862ac810ad8cfd 46
+p2p-cpp/src/servers/signaling/CMakeLists.txt
+  6e5f831c4b2b82dc 3-4
+  361c6f0a94005946 8-11,24,27-28
+  e6862ac810ad8cfd 25,40
+p2p-cpp/src/servers/relay/rate_limiter.cpp
+  e6862ac810ad8cfd 115
+p2p-cpp/include/p2p/utils/logger.hpp
+  361c6f0a94005946 1-36
+p2p-cpp/src/servers/stun/stun_server.cpp
+  361c6f0a94005946 2,35,38,48,51,55,73,167,182
+p2p-cpp/src/servers/relay/main.cpp
+  361c6f0a94005946 7,17,25-35,63,74-75,77-84,97-111,118,122
+p2p-cpp/src/servers/signaling/include/models.hpp
+  e6862ac810ad8cfd 38-43,95-102
+  361c6f0a94005946 74-75
+p2p-cpp/src/servers/did/did_storage.cpp
+  e6862ac810ad8cfd 6,10-12,16-19,22-24
+p2p-cpp/src/servers/signaling/include/service_handler.hpp
+  361c6f0a94005946 1-40
+.gitignore
+  361c6f0a94005946 71-74
+  e6862ac810ad8cfd 68-70
+p2p-cpp/tools/p2p-tunnel/relay_tunnel.cpp
+  361c6f0a94005946 31
+p2p-cpp/src/servers/relay/relay_connection.cpp
+  6e5f831c4b2b82dc 2,39-40,50,98,104,129-130
+  e6862ac810ad8cfd 137
+p2p-cpp/tools/p2p-tunnel/relay_tunnel_single.cpp
+  361c6f0a94005946 26
+p2p-cpp/src/servers/relay/circuit_relay_v2.cpp
+  361c6f0a94005946 2,51,56,70,76,91,100,136,194,205,271,275,284,330,364,449,485-490
+p2p-cpp/src/servers/did/CMakeLists.txt
+  6e5f831c4b2b82dc 1-2
+  e6862ac810ad8cfd 24,38
+  361c6f0a94005946 25
+p2p-cpp/src/servers/did/did_auth.cpp
+  e6862ac810ad8cfd 3-13,16-112,114-156,160-171,173-176,179-203,206-210,212-216
+PHASE2_COMPLETION_REPORT.md
+  361c6f0a94005946 1-354
+p2p-cpp/src/servers/signaling/src/websocket_session.cpp
+  361c6f0a94005946 4,8,16-17,19-20,22-44,55-57,59-76,97-106,108,117-130,135-147,161-178,208,217-220,222
+  e6862ac810ad8cfd 112,193-197
+p2p-cpp/src/utils/logger.cpp
+  361c6f0a94005946 1-53
+p2p-cpp/src/servers/signaling/src/models.cpp
+  e6862ac810ad8cfd 29-34,61-66,137-149
+  361c6f0a94005946 107
+p2p-cpp/include/servers/did/did_storage.hpp
+  6e5f831c4b2b82dc 10,12,16
+  e6862ac810ad8cfd 3,5,17,22-23,26-27
+p2p-cpp/.gitignore
+  361c6f0a94005946 3,7-10,85-92
+p2p-cpp/src/servers/relay/port_pool.cpp
+  6e5f831c4b2b82dc 7,9,17,71
+p2p-cpp/src/servers/signaling/src/connect_handler.cpp
+  361c6f0a94005946 1-10,12,19-50,138,212,289
+p2p-cpp/src/servers/signaling/include/register_handler.hpp
+  361c6f0a94005946 1-34
+p2p-cpp/src/servers/relay/allocation_manager.cpp
+  6e5f831c4b2b82dc 7-9,228
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "8656fb84979a5738c059ece32c975a3c1c344353",
+  "prompts": {
+    "361c6f0a94005946": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "85a17d17-cf86-4348-9316-9412c2c5796d",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 396,
+      "total_deletions": 0,
+      "accepted_lines": 5917,
+      "overriden_lines": 0
+    },
+    "6e5f831c4b2b82dc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9927335d-3677-4429-ab2e-dec31197d99c",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 464,
+      "overriden_lines": 0
+    },
+    "e6862ac810ad8cfd": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "7fd3456e-8afc-4ab9-a9c9-2eaa9dcffd26",
+        "model": "default"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 2227,
+      "overriden_lines": 0
+    }
+  }
+}
