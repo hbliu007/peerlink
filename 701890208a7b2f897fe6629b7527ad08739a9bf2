@@ -1,0 +1,205 @@
+p2p-cpp/docx/docs/reference/c-api.md
+  15ffc695e74c47cc 1-652
+p2p-cpp/docx/docs/concepts/architecture.md
+  15ffc695e74c47cc 1-339
+p2p-cpp/docx/tutorials/ssh-tunnel.md
+  15ffc695e74c47cc 1-371
+p2p-cpp/docx/docs/contributing/documentation.md
+  15ffc695e74c47cc 1-11,14,16,18-19,21-30,32,34-39,41-45,47-92,94-102,104-126,129,131,133,135-136,140-144,150,155,157,161,165,169,171-174,176-177,179-186,194-202,214-280,282,284-293,295-300,302-311,313-316,318,320-329,331,333,335,337-341,343-344,346-349
+p2p-cpp/docx/tutorials/python-sdk.md
+  15ffc695e74c47cc 1-491
+p2p-cpp/docx/docs/index.md
+  15ffc695e74c47cc 1-185
+p2p-cpp/docx/docs/concepts/security-model.md
+  15ffc695e74c47cc 1-596
+p2p-cpp/docx/mkdocs.yml
+  15ffc695e74c47cc 1-129
+p2p-cpp/docs/design/p2p-architecture.excalidraw
+  64b53bd845f03f01 1-2959
+p2p-cpp/docx/tutorials/index.md
+  15ffc695e74c47cc 1-67
+p2p-cpp/docs/design/p2p-connection-sequence.excalidraw
+  64b53bd845f03f01 1-2194
+p2p-cpp/docx/docs/reference/security.md
+  15ffc695e74c47cc 1-363
+p2p-cpp/docx/overrides/partials/source-file.html
+  15ffc695e74c47cc 1-13
+p2p-cpp/docx/contributing/index.md
+  15ffc695e74c47cc 1-346
+p2p-cpp/docx/docs/tutorials/ssh-tunnel.md
+  15ffc695e74c47cc 1-273
+p2p-cpp/docx/docs/how-to/security-hardening.md
+  15ffc695e74c47cc 1-453
+p2p-cpp/docx/docs/concepts/performance.md
+  15ffc695e74c47cc 1-433
+p2p-cpp/docx/docs/concepts/how-peerlink-works.md
+  15ffc695e74c47cc 1-227
+p2p-cpp/docx/docs/reference/faq.md
+  15ffc695e74c47cc 1-508
+p2p-cpp/docx/overrides/partials/footer.html
+  15ffc695e74c47cc 1-28
+p2p-cpp/docx/docs/contributing/testing.md
+  15ffc695e74c47cc 1-509
+p2p-cpp/deploy_aliyun.sh
+  1520dc255e086586 1-76
+p2p-cpp/docx/docs/how-to/build-from-source.md
+  15ffc695e74c47cc 1-393
+p2p-cpp/docx/docs/concepts/dcutr-protocol.md
+  15ffc695e74c47cc 1-316
+p2p-cpp/docx/docs/how-to/firewall-traversal.md
+  15ffc695e74c47cc 1-371
+p2p-cpp/docx/contributing/code-of-conduct.md
+  15ffc695e74c47cc 1-62
+p2p-cpp/docx/docs/tutorials/mobile-connect.md
+  15ffc695e74c47cc 1-303
+p2p-cpp/docx/contributing/documentation.md
+  15ffc695e74c47cc 1-436
+p2p-cpp/docx/requirements.txt
+  15ffc695e74c47cc 1-3
+p2p-cpp/docx/docs/concepts/circuit-relay.md
+  15ffc695e74c47cc 1-485
+p2p-cpp/docx/docs/tutorials/python-sdk.md
+  15ffc695e74c47cc 1-352
+p2p-cpp/docx/docs/how-to/troubleshooting.md
+  15ffc695e74c47cc 1-345
+p2p-cpp/docx/docs/how-to/performance.md
+  15ffc695e74c47cc 1-330
+p2p-cpp/docx/docs/tutorials/first-connection.md
+  15ffc695e74c47cc 1-303
+p2p-cpp/docx/docs/contributing/overview.md
+  15ffc695e74c47cc 1-330
+p2p-cpp/docx/tutorials/multi-device.md
+  15ffc695e74c47cc 1-373
+p2p-cpp/docx/README.md
+  15ffc695e74c47cc 1-154
+p2p-cpp/test_connectivity.sh
+  1520dc255e086586 1-125
+p2p-cpp/docx/docs/concepts/nat-traversal.md
+  15ffc695e74c47cc 1-231
+p2p-cpp/docx/docs/reference/config.md
+  15ffc695e74c47cc 1-420
+p2p-cpp/docx/docs/how-to/configure-tls.md
+  15ffc695e74c47cc 1-413
+p2p-cpp/docx/docs/how-to/deploy-aliyun.md
+  15ffc695e74c47cc 1-442
+p2p-cpp/docx/docs/how-to/configuration.md
+  15ffc695e74c47cc 1-354
+p2p-cpp/docx/docs/reference/python-api.md
+  15ffc695e74c47cc 1-492
+p2p-cpp/docx/docs/assets/stylesheets/extra.css
+  15ffc695e74c47cc 1-374
+p2p-cpp/docx/docs/tutorials/deployment.md
+  15ffc695e74c47cc 1-412
+p2p-cpp/DEPLOYMENT_STATUS.md
+  1520dc255e086586 1-103
+p2p-cpp/docx/docs/reference/api.md
+  15ffc695e74c47cc 1-479
+p2p-cpp/docx/docs/how-to/rate-limiting.md
+  15ffc695e74c47cc 1-346
+p2p-cpp/docx/tutorials/quick-start.md
+  15ffc695e74c47cc 1-297
+p2p-cpp/docx/docs/reference/changelog.md
+  15ffc695e74c47cc 1-189
+p2p-cpp/docx/docs/how-to/monitoring.md
+  15ffc695e74c47cc 1-497
+p2p-cpp/docs/TEST_REPORT_20260404.md
+  5af08f8796e56578 1-657
+p2p-cpp/docx/docs/reference/protocol.md
+  15ffc695e74c47cc 1-377
+p2p-cpp/docx/DESIGN_SPEC.md
+  15ffc695e74c47cc 1-151
+p2p-cpp/build.sh
+  1520dc255e086586 1-11,13,17-18,26-27,30,32
+p2p-cpp/docx/docs/contributing/index.md
+  15ffc695e74c47cc 1-2,4,6,8,10,17-21,23,27,30-31,33-34,38-40,42-44,46-48,50,53,56-63,65-66,74,76,78,84,86,88-90,96,98,103,105,107,112,114-115,117
+p2p-cpp/docx/docs/reference/cli.md
+  15ffc695e74c47cc 1-412
+p2p-cpp/docx/overrides/main.html
+  15ffc695e74c47cc 1-34
+p2p-cpp/docx/docs/contributing/development.md
+  15ffc695e74c47cc 1-385
+p2p-cpp/docx/docs/concepts/comparisons.md
+  15ffc695e74c47cc 1-165
+p2p-cpp/docx/docs/tutorials/quick-start.md
+  15ffc695e74c47cc 1-198
+p2p-cpp/docx/docs/reference/protocols.md
+  15ffc695e74c47cc 1-503
+p2p-cpp/DEPLOYMENT_GUIDE.md
+  1520dc255e086586 1-261
+p2p-cpp/docx/tutorials/mobile-connect.md
+  15ffc695e74c47cc 1-414
+p2p-cpp/deploy_remote.sh
+  1520dc255e086586 1-89
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "701890208a7b2f897fe6629b7527ad08739a9bf2",
+  "prompts": {
+    "1520dc255e086586": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "aaeab72d-00ef-4a07-a973-ddcbdbfa390a",
+        "model": "claude-opus-4.6"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 672,
+      "overriden_lines": 0
+    },
+    "15ffc695e74c47cc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "73a5b1d7-cfa5-4313-840b-f52fac70d732",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 18456,
+      "overriden_lines": 0
+    },
+    "51ae8f1a6553a1ca": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "198b4b35-e779-4e79-a94c-413e12e5814d",
+        "model": "glm-5.1"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 1651,
+      "overriden_lines": 0
+    },
+    "5af08f8796e56578": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "42de7868-73c5-4436-bcdf-71ab5d977dcd",
+        "model": "claude-opus-4-6-thinking"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 657,
+      "overriden_lines": 0
+    },
+    "64b53bd845f03f01": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1471c5fc-8d62-4553-91f8-a27b6fadafd6",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "hbliu008",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 5153,
+      "overriden_lines": 0
+    }
+  }
+}
