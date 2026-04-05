@@ -177,19 +177,16 @@ Layer 3: TLS 1.3 Relay          ████████████████
 <details>
 <summary><strong>🏭 vs Commercial IoT P2P Platforms</strong></summary>
 
-> _TUTK (1.2亿+ 设备), 大拿 (1200万+ 设备), 尚云互联 (2000万+ 设备) — IoT/摄像头垂直领域。 For 通用 P2P 连接、数据主权和安全透明， PeerLink 是更好的选择._
+> _Commercial IoT P2P solutions focus on camera/vertical domains with massive device deployments. For general-purpose P2P connectivity, data sovereignty, and security transparency, open-source solutions offer better control and auditability._
 
-| Feature | PeerLink | TUTK Kalay | 大拿 Danale | 尚云互联 CS2 |
-|:--------|:--------:|:-----------:|:-----------:|:-------------|
-| Open Source | ✅ MIT | ❌ 闭源 | ❌ 闭源 | ❌ 闭源 |
-| Fully Self-Hosted | ✅ Zero Dep | ❌ Master Server | ❌ Cloud Required | ⚠️ DSK Server |
-| E2E Encryption | ✅ TLS 1.3 | ⚠️ DTLS 1.2+ | ⚠️ DSTT Private | ⚠️ P2PKey |
-| DID Identity | ✅ W3C DID | ❌ Centralized UID | ❌ Centralized ID | ❌ Centralized ID |
-| Zero Vendor Lock-in | ✅ | ❌ UID绑定 | ❌ Cloud绑定 | ⚠️ DID绑定 |
-| Python SDK | ✅ | ❌ | ❌ | ❌ |
-| Throughput | **>500 Mbps** | IoT级 | IoT级 | IoT级 |
-| Security Auditable | ✅ Open | ❌ Closed Source | ❌ Closed Source | ❌ Closed Source |
-| Performance Public | ✅ | ❌ Hidden | ❌ Hidden | ❌ Hidden |
+| Feature | PeerLink | Typical Commercial IoT P2P |
+|:--------|:--------:|:-------------------------:|
+| Open Source | ✅ MIT | Typically closed source |
+| Fully Self-Hosted | ✅ Zero Dep | Typically cloud-dependent |
+| Security Auditable | ✅ Fully open | Not publicly auditable |
+| Zero Vendor Lock-in | ✅ | Typically vendor-bound |
+| Python SDK | ✅ | Typically not available |
+| Throughput | **>500 Mbps** | IoT-tier bandwidth |
 
 </details>
 
@@ -318,4 +315,3 @@ Contributions welcome! See [Contributing Guide](p2p-cpp/docs/contributing/overvi
 <p align="center">
   <a href="https://github.com/hbliu007/peerlink"><strong>GitHub</strong></a> · <a href="https://github.com/hbliu007/peerlink/issues">Issues</a> · <a href="https://github.com/hbliu007/peerlink/discussions">Discussions</a>
 </p>
-<!-- Last updated: 2026-04-05 -->
