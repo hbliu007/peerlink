@@ -19,6 +19,9 @@
   <a href="https://github.com/hbliu007/peerlink/issues">
     <img src="https://img.shields.io/github/issues/hbliu007/peerlink?style=flat-square" alt="Issues">
   </a>
+  <a href="https://trendshift.io/repositories/11039" target="_blank" rel="noopener">
+    <img src="https://trendshift.io/api/badge/repositories/11039" alt="Trendshift">
+  </a>
 </p>
 
 <p align="center">
@@ -275,6 +278,16 @@ Contributions welcome! See [Contributing Guide](p2p-cpp/docs/contributing/overvi
 
 <a href="https://github.com/hbliu007/peerlink/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=hbliu007/peerlink&max=24&columns=8" alt="Contributors" />
+</a>
+
+## ⭐ Star History
+
+<a href="https://star-history.com/#hbliu007/peerlink&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=hbliu007/peerlink&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=hbliu007/peerlink&type=Date" />
+   <img alt="Star History Chart" width="100%" src="https://api.star-history.com/svg?repos=hbliu007/peerlink&type=Date" />
+ </picture>
 </a>
 
 ## 📄 License
