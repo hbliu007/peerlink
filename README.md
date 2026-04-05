@@ -318,3 +318,4 @@ Contributions welcome! See [Contributing Guide](p2p-cpp/docs/contributing/overvi
 <p align="center">
   <a href="https://github.com/hbliu007/peerlink"><strong>GitHub</strong></a> · <a href="https://github.com/hbliu007/peerlink/issues">Issues</a> · <a href="https://github.com/hbliu007/peerlink/discussions">Discussions</a>
 </p>
+<!-- Last updated: 2026-04-05 -->
