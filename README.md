@@ -163,16 +163,38 @@ Layer 3: TLS 1.3 Relay          ████████████████
 
 ## 🆚 Comparison
 
+### P2P Connectivity & Remote Access
+
 | Feature | PeerLink | FRP | Tailscale | ZeroTier |
 |:--------|:--------:|:---:|:---------:|:--------:|
-| P2P Direct | ✅ | ❌ | ✅ | ✅ |
-| Self-Hosted | ✅ Full | ✅ | ❌ SaaS | ⚠️ Paid |
-| Zero 3rd-Party Dep | ✅ | ✅ | ❌ DERP | ❌ Root servers |
-| NAT Traversal Layers | **3** | 0 | 3 | 3 |
-| E2E Encryption | ✅ | ❌ | ✅ | ✅ |
+| P2P Direct | ✅ | ⚠️ xtcp only | ✅ | ✅ |
+| Self-Hosted | ✅ Full | ✅ Full | ⚠️ via Headscale | ⚠️ Controller non-free |
+| Zero 3rd-Party Dep | ✅ | ✅ | ❌ DERP relay | ❌ Root servers |
+| NAT Traversal | **3 layers** | Relay default | Multi-strategy | Custom protocol |
+| E2E Encryption | ✅ TLS 1.3 | ⚠️ TLS to relay | ✅ WireGuard | ✅ |
 | Decentralized Identity | ✅ DID | ❌ | ❌ | ❌ |
-| License | **MIT** | Apache 2.0 | BSD | BSL 1.1 |
-| Language | C++20 | Go | Go | Go |
+| License | **MIT** | Apache 2.0 | BSD-3 (client) | MPL-2.0 (core) |
+| Language | C++20 | Go | Go | C++ |
+
+<details>
+<summary><strong>🌐 P2P Ecosystem Overview</strong></summary>
+
+| Project | Category | Language | License | Self-Hosted | NAT Traversal | Encryption |
+|:--------|:---------|:--------:|:-------:|:-----------:|:-------------:|:----------:|
+| **PeerLink** | P2P Connectivity | C++20 | MIT | ✅ Full | 3-layer fallback | TLS 1.3 + DID |
+| **[libp2p](https://github.com/libp2p/libp2p)** | P2P Network Stack | Multi-lang | MIT | ✅ | AutoNAT + DCUtR + Relay | Noise / TLS 1.3 |
+| **[WebTorrent](https://github.com/webtorrent/webtorrent)** | Browser File Sharing | JavaScript | MIT | ✅ | WebRTC ICE (STUN/TURN) | DTLS |
+| **[IPFS](https://github.com/ipfs/ipfs)** | Distributed Storage | Go | Apache 2.0 / MIT | ✅ | via libp2p | Transport only |
+| **[Syncthing](https://github.com/syncthing/syncthing)** | File Sync | Go | MPL-2.0 | ✅ | UPnP + Discovery + Relay | TLS 1.3 |
+| **FRP** | Reverse Proxy | Go | Apache 2.0 | ✅ | STUN (xtcp only) | TLS to relay |
+| **Tailscale** | Mesh VPN | Go | BSD-3 (client) | ⚠️ Headscale | UDP + DERP relay | WireGuard |
+| **ZeroTier** | SDN Overlay | C++ | MPL-2.0 (core) | ⚠️ Controller non-free | Custom | Salsa20 |
+
+**Notable users:** libp2p powers IPFS, Filecoin, Ethereum 2.0. WebTorrent is used by Brave browser. IPFS serves NFT storage and decentralized web. Syncthing is the leading open-source file sync tool.
+
+> _Each project targets different use cases. PeerLink focuses on general-purpose P2P secure access with zero third-party dependency._
+
+</details>
 
 <details>
 <summary><strong>🏭 vs Commercial IoT P2P Platforms</strong></summary>
